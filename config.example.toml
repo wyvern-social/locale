@@ -1,5 +1,17 @@
 production = true
 
+[database]
+
+[database.postgres]
+host = "localhost"
+port = 5432
+username = "wyvern"
+password = "secret"
+database = "wyvern"
+ssl_mode = "Prefer"
+timeout = 15
+pooling = true
+
 [api]
 
 [api.registration]
