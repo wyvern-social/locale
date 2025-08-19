@@ -30,22 +30,40 @@ namespace Wyvern.ConfigModel
         /// <summary>
         /// Get a value of type T. Throws if missing or invalid.
         /// </summary>
-        public static T GetKey<T>(params string[] path)
-        {
-            var value = TraversePath(path);
+public static T GetKey<T>(params string[] path)
+{
+    var value = TraversePath(path);
 
-            try
-            {
-                if (typeof(T) == typeof(bool) && value is TomlBoolean tb)
-                    return (T)(object)tb.Value;
+    try
+    {
+        if (value == null)
+            throw new Exception();
 
-                return (T)Convert.ChangeType(value, typeof(T));
-            }
-            catch (Exception)
-            {
-                throw new Exception($"Required key '{string.Join('.', path)}' missing or invalid in config.toml!");
-            }
-        }
+        if (typeof(T) == typeof(bool) && value is Tommy.TomlBoolean tb)
+            return (T)(object)tb.Value;
+
+        if (typeof(T) == typeof(string) && value is Tommy.TomlString ts)
+            return (T)(object)ts.Value;
+
+        if (typeof(T) == typeof(int) && value is Tommy.TomlInteger ti)
+            return (T)(object)(int)ti.Value;
+
+        if (typeof(T) == typeof(long) && value is Tommy.TomlInteger tli)
+            return (T)(object)tli.Value;
+
+        if (typeof(T) == typeof(double) && value is Tommy.TomlFloat td)
+            return (T)(object)(double)td.Value;
+
+        if (typeof(T) == typeof(float) && value is Tommy.TomlFloat tdf)
+            return (T)(object)(float)tdf.Value;
+
+        return (T)Convert.ChangeType(value, typeof(T));
+    }
+    catch (Exception)
+    {
+        throw new Exception($"Required key '{string.Join('.', path)}' missing or invalid in config.toml!");
+    }
+}
 
         private static object TraversePath(string[] path)
         {
