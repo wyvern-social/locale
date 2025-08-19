@@ -3,6 +3,10 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
+# toml files
+*.toml
+!config.example.toml
+
 # dotenv files
 .env
 

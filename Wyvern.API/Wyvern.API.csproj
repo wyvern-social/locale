@@ -9,5 +9,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wyvern.ConfigModel\Wyvern.ConfigModel.csproj" />
+  </ItemGroup>
+
 
 </Project>
