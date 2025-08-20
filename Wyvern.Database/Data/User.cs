@@ -26,19 +26,19 @@ namespace Wyvern.Database.Data
 
         [MaxLength(255)]
         [Column("email")]
-        public string Email { get; set; }
+        public string Email { get; set; } = null!;
 
         [Column("password")]
-        public string Password { get; set; }
+        public string Password { get; set; } = null!;
 
         [Column("birthday")]
         public DateTime Birthday { get; set; }
 
         [Column("token_h")]
-        public string TokenHash { get; set; }
+        public string TokenHash { get; set; } = null!;
 
         [Column("token_e")]
-        public string TokenEncrypted { get; set; }
+        public string TokenEncrypted { get; set; } = null!;
 
         [Column("avatar")]
         public string? Avatar { get; set; }
@@ -51,11 +51,11 @@ namespace Wyvern.Database.Data
 
         [MaxLength(10)]
         [Column("locale")]
-        public string Locale { get; set; }
+        public string Locale { get; set; } = null!;
 
         [MaxLength(10)]
         [Column("region")]
-        public string Region { get; set; }
+        public string Region { get; set; } = null!;
 
         [Column("rank")]
         public long Rank { get; set; } = 0;
