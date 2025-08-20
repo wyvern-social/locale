@@ -7,11 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wyvern.API", "Wyvern.API\Wy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wyvern.ConfigModel", "Wyvern.ConfigModel\Wyvern.ConfigModel.csproj", "{C62ABD6B-CC26-4B2B-9EB7-83BC2111CE04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wyvern.DbModel", "Wyvern.DbModel\Wyvern.DbModel.csproj", "{DCDD2712-73BB-4CE8-83EB-2BD4EEE93A6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wyvern.Database", "Wyvern.Database\Wyvern.Database.csproj", "{DCDD2712-73BB-4CE8-83EB-2BD4EEE93A6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wyvern.Gateway", "Wyvern.Gateway\Wyvern.Gateway.csproj", "{A3559692-FAC9-4653-B2F0-B5B105ECF39A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wyvern.Static", "Wyvern.Static\Wyvern.Static.csproj", "{A4A1AEAD-E53D-4D59-9CAD-48D055AAD61F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wyvern.Tests", "Wyvern.Tests\Wyvern.Tests.csproj", "{6B18CB46-C1AD-44C1-87BA-9C6C65C8B408}"
 EndProject
