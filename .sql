@@ -24,7 +24,7 @@ CREATE TABLE users (
     updated_at TIMESTAMPTZ DEFAULT now()
 );
 
-CREATE TABLE name_resv (
+CREATE TABLE waitlist (
     username VARCHAR(32) PRIMARY KEY,
     email VARCHAR(255)
 );
