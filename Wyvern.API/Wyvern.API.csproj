@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Wyvern.ConfigModel\Wyvern.ConfigModel.csproj" />
     <ProjectReference Include="..\Wyvern.Database\Wyvern.Database.csproj" />
+    <ProjectReference Include="..\Wyvern.Utils\Wyvern.Utils.csproj" />
   </ItemGroup>
 
 
