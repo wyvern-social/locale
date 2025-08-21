@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Text.Json.Serialization;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Wyvern.ConfigModel;
 using Wyvern.Utils.Validators;
@@ -12,88 +11,79 @@ namespace Wyvern.API.Controllers
     [Route("auth/register")]
     public class RegisterController : ControllerBase
     {
-        //TODO: Database stuffs
-
+        
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] RegisterRequest model)
         {
-            return await Task.Run<IActionResult>(() =>
+            if (model == null
+                || string.IsNullOrWhiteSpace(model.Username)
+                || string.IsNullOrWhiteSpace(model.Email)
+                || string.IsNullOrWhiteSpace(model.Password)
+                || model.Birthday == default)
             {
-                if (model == null
-                    || string.IsNullOrWhiteSpace(model.Username)
-                    || string.IsNullOrWhiteSpace(model.Email)
-                    || string.IsNullOrWhiteSpace(model.Password)
-                    || model.Birthday == default)
+                Console.WriteLine("Invalid request payload.");
+                return BadRequest(new
                 {
-                    return BadRequest(new
-                    {
-                        success = false,
-                        statusCode = 400,
-                        data = new
-                        {
-                            message = "Invalid Request Payload"
-                        }
-                    });
-                }
-
-                bool isInviteOnly = Config.GetKey<bool>("api", "registration", "invite_only");
-
-                if (isInviteOnly)
-                {
-                    if (string.IsNullOrWhiteSpace(model.InviteCode))
-                    {
-                        return StatusCode(403, new
-                        {
-                            success = false,
-                            statusCode = 403,
-                            data = new
-                            {
-                                message = "Registration is currently invite-only. Please provide a valid invite code to continue."
-                            }
-                        });
-                    }
-                    else
-                    {
-                        var validInvite = "AB12-CD34";
-
-                        if (model.InviteCode != validInvite)
-                        {
-                            return StatusCode(403, new
-                            {
-                                success = false,
-                                statusCode = 403,
-                                data = new
-                                {
-                                    message = "The provided invite code is invalid."
-                                }
-                            });
-                        }
-                    }
-                }
-
-                var ageResult = AgeValidator.Check(model.Birthday);
-                if (!ageResult.Success)
-                {
-                    return BadRequest(new
-                    {
-                        success = false,
-                        statusCode = 400,
-                        data = new
-                        {
-                            message = ageResult.ErrorMessage
-                        }
-                    });
-                }
-                
-                return Ok(new
-                {
-                    success = true,
-                    statusCode = 200,
-                    data = new
-                    {
-                        message = "success"
-                    }
+                    success = false,
+                    statusCode = 400,
+                    data = new { message = "Invalid Request Payload" }
                 });
+            }
+
+            var emailResult = await EmailValidator.CheckAsync(model.Email);
+            if (!emailResult.Success)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    statusCode = 400,
+                    data = new { message = emailResult.ErrorMessage }
+                });
+            }
+
+            var ageResult = AgeValidator.Check(model.Birthday);
+            if (!ageResult.Success)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    statusCode = 400,
+                    data = new { message = ageResult.ErrorMessage }
+                });
+            }
+
+            bool isInviteOnly = Config.GetKey<bool>("api", "registration", "invite_only");
+            if (isInviteOnly)
+            {
+                if (string.IsNullOrWhiteSpace(model.InviteCode))
+                {
+                    Console.WriteLine("Invite code required.");
+                    return StatusCode(403, new
+                    {
+                        success = false,
+                        statusCode = 403,
+                        data = new { message = "Registration is currently invite-only. Please provide a valid invite code to continue." }
+                    });
+                }
+
+                var validInvite = "AB12-CD34"; // Example
+                if (model.InviteCode != validInvite)
+                {
+                    Console.WriteLine("Invalid invite code.");
+                    return StatusCode(403, new
+                    {
+                        success = false,
+                        statusCode = 403,
+                        data = new { message = "The provided invite code is invalid." }
+                    });
+                }
+            }
+
+            return Ok(new
+            {
+                success = true,
+                statusCode = 200,
+                data = new { message = "success" }
             });
         }
     }
