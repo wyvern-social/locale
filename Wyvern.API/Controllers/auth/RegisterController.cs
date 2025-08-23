@@ -15,21 +15,6 @@ namespace Wyvern.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] RegisterRequest model)
         {
-            if (model == null
-                || string.IsNullOrWhiteSpace(model.Username)
-                || string.IsNullOrWhiteSpace(model.Email)
-                || string.IsNullOrWhiteSpace(model.Password)
-                || model.Birthday == default)
-            {
-                Console.WriteLine("Invalid request payload.");
-                return BadRequest(new
-                {
-                    success = false,
-                    statusCode = 400,
-                    data = new { message = "Invalid Request Payload" }
-                });
-            }
-
             var emailResult = await EmailValidator.CheckAsync(model.Email);
             if (!emailResult.Success)
             {
@@ -37,7 +22,7 @@ namespace Wyvern.API.Controllers
                 {
                     success = false,
                     statusCode = 400,
-                    data = new { message = emailResult.ErrorMessage }
+                    data = new { message = passResult.ErrorMessage }
                 });
             }
 
