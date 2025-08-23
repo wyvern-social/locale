@@ -32,6 +32,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IWaitlistRepository, WaitlistRepository>();
 
 var app = builder.Build();
 

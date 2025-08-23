@@ -4,6 +4,9 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Wyvern.ConfigModel;
 using Wyvern.Utils.Validators;
+using Wyvern.Database.Data;
+using Microsoft.EntityFrameworkCore;
+using Wyvern.Database.Repositories;
 
 namespace Wyvern.API.Controllers
 {
@@ -11,7 +14,16 @@ namespace Wyvern.API.Controllers
     [Route("auth/register")]
     public class RegisterController : ControllerBase
     {
-        
+        private readonly AppDbContext _db;
+        private readonly IWaitlistRepository _WaitlistRepository;
+
+        public RegisterController(AppDbContext db, IWaitlistRepository WaitlistRepository)
+        {
+            _db = db;
+            _WaitlistRepository = WaitlistRepository;
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] RegisterRequest model)
         {
@@ -84,6 +96,18 @@ namespace Wyvern.API.Controllers
                         data = new { message = "The provided invite code is invalid." }
                     });
                 }
+            }
+
+            var waitlistEntry = await _WaitlistRepository.GetByUsernameAsync(model.Username);
+
+            if (waitlistEntry != null && !string.Equals(waitlistEntry.Email, model.Email, StringComparison.OrdinalIgnoreCase))
+            {
+                return StatusCode(403, new
+                {
+                    success = false,
+                    statusCode = 403,
+                    data = new { message = "This username is reserved." }
+                });
             }
 
             return Ok(new
