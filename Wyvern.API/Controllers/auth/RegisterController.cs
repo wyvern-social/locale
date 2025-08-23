@@ -15,8 +15,30 @@ namespace Wyvern.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] RegisterRequest model)
         {
+            var usernameResult = await UsernameValidator.CheckAsync(model.Username);
+            if (!usernameResult.Success)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    statusCode = 400,
+                    data = new { message = usernameResult.ErrorMessage }
+                });
+            }
+
             var emailResult = await EmailValidator.CheckAsync(model.Email);
             if (!emailResult.Success)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    statusCode = 400,
+                    data = new { message = emailResult.ErrorMessage }
+                });
+            }
+
+            var passResult = await PasswordValidator.CheckAsync(model.Password);
+            if (!passResult.Success)
             {
                 return BadRequest(new
                 {
