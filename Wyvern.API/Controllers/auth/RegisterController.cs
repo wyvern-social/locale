@@ -7,6 +7,7 @@ using Wyvern.Utils.Validators;
 using Wyvern.Database.Data;
 using Microsoft.EntityFrameworkCore;
 using Wyvern.Database.Repositories;
+using Wyvern.Utils.Generators;
 
 namespace Wyvern.API.Controllers
 {
@@ -26,6 +27,8 @@ namespace Wyvern.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] RegisterRequest model)
         {
+            model.Locale ??= "en_us";
+
             var usernameResult = await UsernameValidator.CheckAsync(model.Username);
             if (!usernameResult.Success)
             {
@@ -134,6 +137,8 @@ namespace Wyvern.API.Controllers
                     }
                 });
             }
+
+            string user_id = IdGen.GenerateId();
 
             return StatusCode(201, new
             {
