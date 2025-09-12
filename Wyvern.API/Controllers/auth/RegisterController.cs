@@ -23,7 +23,6 @@ namespace Wyvern.API.Controllers
             _WaitlistRepository = WaitlistRepository;
         }
 
-
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] RegisterRequest model)
         {
@@ -34,7 +33,11 @@ namespace Wyvern.API.Controllers
                 {
                     success = false,
                     statusCode = 400,
-                    data = new { message = usernameResult.ErrorMessage }
+                    data = new
+                    {
+                        message_key = usernameResult.MessageKey,
+                        message = usernameResult.Message
+                    }
                 });
             }
 
@@ -45,7 +48,11 @@ namespace Wyvern.API.Controllers
                 {
                     success = false,
                     statusCode = 400,
-                    data = new { message = emailResult.ErrorMessage }
+                    data = new
+                    {
+                        message_key = emailResult.MessageKey,
+                        message = emailResult.Message
+                    }
                 });
             }
 
@@ -56,7 +63,11 @@ namespace Wyvern.API.Controllers
                 {
                     success = false,
                     statusCode = 400,
-                    data = new { message = passResult.ErrorMessage }
+                    data = new
+                    {
+                        message_key = passResult.MessageKey,
+                        message = passResult.Message
+                    }
                 });
             }
 
@@ -67,7 +78,11 @@ namespace Wyvern.API.Controllers
                 {
                     success = false,
                     statusCode = 400,
-                    data = new { message = ageResult.ErrorMessage }
+                    data = new
+                    {
+                        message_key = ageResult.MessageKey,
+                        message = ageResult.Message
+                    }
                 });
             }
 
@@ -76,24 +91,30 @@ namespace Wyvern.API.Controllers
             {
                 if (string.IsNullOrWhiteSpace(model.InviteCode))
                 {
-                    Console.WriteLine("Invite code required.");
                     return StatusCode(403, new
                     {
                         success = false,
                         statusCode = 403,
-                        data = new { message = "Registration is currently invite-only. Please provide a valid invite code to continue." }
+                        data = new
+                        {
+                            message_key = "auth.register.invite_only",
+                            message = "Registration is currently invite-only. Please provide a valid invite code to continue."
+                        }
                     });
                 }
 
                 var validInvite = "AB12-CD34"; // Example
                 if (model.InviteCode != validInvite)
                 {
-                    Console.WriteLine("Invalid invite code.");
                     return StatusCode(403, new
                     {
                         success = false,
                         statusCode = 403,
-                        data = new { message = "The provided invite code is invalid." }
+                        data = new
+                        {
+                            message_key = "auth.register.invalid_invite",
+                            message = "The provided invite code is invalid."
+                        }
                     });
                 }
             }
@@ -106,15 +127,24 @@ namespace Wyvern.API.Controllers
                 {
                     success = false,
                     statusCode = 403,
-                    data = new { message = "This username is reserved." }
+                    data = new
+                    {
+                        message_key = "auth.register.username_reserved",
+                        message = "This username is reserved."
+                    }
                 });
             }
 
-            return Ok(new
+            return StatusCode(201, new
             {
                 success = true,
-                statusCode = 200,
-                data = new { message = "success" }
+                statusCode = 201,
+                data = new
+                {
+                    message_key = "auth.register.verify_email_required",
+                    message = "Almost there! Check your inbox and verify your email to finish signing up.",
+                    requires_verification = true
+                }
             });
         }
     }

@@ -18,28 +18,58 @@ namespace Wyvern.Utils.Validators
         private static readonly HttpClient Http = new HttpClient();
         private static readonly TimeSpan CacheTtl = TimeSpan.FromMinutes(15);
 
-        private static HashSet<string> _blockedCache = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        private static HashSet<string> _blockedCache = new(StringComparer.OrdinalIgnoreCase);
         private static DateTimeOffset _blockedCacheExpires = DateTimeOffset.MinValue;
 
         public static async Task<ValidationResult> CheckAsync(string username)
         {
             if (string.IsNullOrWhiteSpace(username))
-                return ValidationResult.Fail("Username cannot be empty.");
+            {
+                return ValidationResult.Fail(
+                    "username.empty",
+                    "Username cannot be empty."
+                );
+            }
 
             if (username.Length < 2)
-                return ValidationResult.Fail("Username must be at least 2 characters long.");
+            {
+                return ValidationResult.Fail(
+                    "username.too_short",
+                    "Username must be at least 2 characters long."
+                );
+            }
 
             if (username.Length > 15)
-                return ValidationResult.Fail("Username may not be longer than 15 characters.");
+            {
+                return ValidationResult.Fail(
+                    "username.too_long",
+                    "Username may not be longer than 15 characters."
+                );
+            }
 
             if (!Regex.IsMatch(username, @"^[a-zA-Z0-9._]+$"))
-                return ValidationResult.Fail("Username can only contain letters, numbers, dots, or underscores.");
+            {
+                return ValidationResult.Fail(
+                    "username.invalid_characters",
+                    "Username can only contain letters, numbers, dots, or underscores."
+                );
+            }
 
             if (Regex.IsMatch(username, @"[._]{2,}"))
-                return ValidationResult.Fail("Username cannot contain consecutive dots or underscores.");
+            {
+                return ValidationResult.Fail(
+                    "username.repeated_symbols",
+                    "Username cannot contain consecutive dots or underscores."
+                );
+            }
 
             if (username.IndexOf("wyvern", StringComparison.OrdinalIgnoreCase) >= 0)
-                return ValidationResult.Fail("Username cannot contain 'wyvern'.");
+            {
+                return ValidationResult.Fail(
+                    "username.contains_reserved_word",
+                    "Username cannot contain 'wyvern'."
+                );
+            }
 
             var blocked = await GetBlockedWordsAsync();
             var name = username.Trim();
@@ -48,7 +78,12 @@ namespace Wyvern.Utils.Validators
             {
                 if (phrase.Length == 0) continue;
                 if (name.IndexOf(phrase, StringComparison.OrdinalIgnoreCase) >= 0)
-                    return ValidationResult.Fail("Username contains a blocked phrase.");
+                {
+                    return ValidationResult.Fail(
+                        "username.blocked_phrase",
+                        "Username contains a blocked phrase."
+                    );
+                }
             }
 
             return ValidationResult.Ok();
