@@ -1,13 +1,11 @@
 CREATE TABLE users (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    id CHAR(26) PRIMARY KEY DEFAULT gen_random_uuid(),
     username VARCHAR(32) NOT NULL,
     discriminator CHAR(4) NOT NULL DEFAULT 0000,
     display_name VARCHAR(64),
     email VARCHAR(255) NOT NULL,
     password TEXT NOT NULL,
     birthday DATE NOT NULL,
-    token_h TEXT NOT NULL,
-    token_e TEXT NOT NULL,
 
     avatar TEXT,
     banner TEXT,
@@ -28,3 +26,16 @@ CREATE TABLE waitlist (
     username VARCHAR(32) PRIMARY KEY,
     email VARCHAR(255)
 );
+
+CREATE TABLE session (
+    id CHAR(26) PRIMARY KEY,
+    user_id CHAR(26) NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+
+    refresh_token TEXT NOT NULL,
+    created_at TIMESTAMPTZ DEFAULT now(),
+    expires_at TIMESTAMPTZ,
+    revoked BOOLEAN DEFAULT FALSE,
+
+    ip_address INET,
+    user_agent TEXT,
+)
