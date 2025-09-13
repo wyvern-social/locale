@@ -1,5 +1,13 @@
 production = true
 
+[mailserver]
+host = "mail.wyvern.gg"
+port = 587
+username = "noreply@wyvern.gg"
+password = "secret"
+use_ssl = true
+use_starttls = true
+
 [database]
 
 [database.postgres]
