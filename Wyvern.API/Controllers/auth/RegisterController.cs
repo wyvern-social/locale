@@ -140,6 +140,8 @@ namespace Wyvern.API.Controllers
 
             string user_id = IdGen.GenerateId();
 
+            string verify_token = TokenGen.GenerateToken(30);
+
             return StatusCode(201, new
             {
                 success = true,
