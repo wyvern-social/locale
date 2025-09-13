@@ -12,6 +12,14 @@ public static class TemplateManager
     private static readonly string TemplatesRoot = Path.Combine(AppContext.BaseDirectory, "Resources", "Templates");
     private static readonly Dictionary<string, JsonElement> Locales = LoadLocales();
 
+    static TemplateManager()
+    {
+        Handlebars.RegisterHelper("year", (writer, context, parameters) =>
+        {
+            writer.Write(DateTime.UtcNow.Year.ToString());
+        });
+    }
+
     private static Dictionary<string, JsonElement> LoadLocales()
     {
         if (!Directory.Exists(LocalesRoot))
