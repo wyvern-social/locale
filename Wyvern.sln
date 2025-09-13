@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wyvern.Tests", "Wyvern.Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wyvern.Utils", "Wyvern.Utils\Wyvern.Utils.csproj", "{F97A9BF8-B63F-484C-AD5E-EB3C4DAC4A78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wyvern.Mailer", "Wyvern.Mailer\Wyvern.Mailer.csproj", "{40602A7F-924E-439A-8A20-88D3B511B722}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +111,18 @@ Global
 		{F97A9BF8-B63F-484C-AD5E-EB3C4DAC4A78}.Release|x64.Build.0 = Release|Any CPU
 		{F97A9BF8-B63F-484C-AD5E-EB3C4DAC4A78}.Release|x86.ActiveCfg = Release|Any CPU
 		{F97A9BF8-B63F-484C-AD5E-EB3C4DAC4A78}.Release|x86.Build.0 = Release|Any CPU
+		{40602A7F-924E-439A-8A20-88D3B511B722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40602A7F-924E-439A-8A20-88D3B511B722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40602A7F-924E-439A-8A20-88D3B511B722}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{40602A7F-924E-439A-8A20-88D3B511B722}.Debug|x64.Build.0 = Debug|Any CPU
+		{40602A7F-924E-439A-8A20-88D3B511B722}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{40602A7F-924E-439A-8A20-88D3B511B722}.Debug|x86.Build.0 = Debug|Any CPU
+		{40602A7F-924E-439A-8A20-88D3B511B722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40602A7F-924E-439A-8A20-88D3B511B722}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40602A7F-924E-439A-8A20-88D3B511B722}.Release|x64.ActiveCfg = Release|Any CPU
+		{40602A7F-924E-439A-8A20-88D3B511B722}.Release|x64.Build.0 = Release|Any CPU
+		{40602A7F-924E-439A-8A20-88D3B511B722}.Release|x86.ActiveCfg = Release|Any CPU
+		{40602A7F-924E-439A-8A20-88D3B511B722}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
