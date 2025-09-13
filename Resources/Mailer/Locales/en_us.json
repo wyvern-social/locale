@@ -1,5 +1,13 @@
 {
+  "CopyrightFooter": "© {{year}} Wyvern Social. All rights reserved.",
   "Welcome": {
-    "Subject": "Welcome to Wyvern, {{Name}}!"
+    "Subject": "Welcome to Wyvern, {{username}}!",
+    "Title": "Welcome, {{username}}!",
+    "Body": "We're thrilled to have you join the Wyvern family. Let's get you set up!",
+    "ActionPrompt": "To start exploring, please verify your account:",
+    "VerifyButton": "Verify Account",
+    "LinkExpiry": "This verification link is valid for 30 minutes.",
+    "Support": "Need help? Contact us at <a href='mailto:support@wyvern.gg' style='color:#e54666; text-decoration:underline;'>support@wyvern.gg</a> or check the official Wyvern community.",
+    "SignOff": "Cheers! — The Wyvern Team"
   }
 }
