@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Wyvern.Utils.Generators;
 
 namespace Wyvern.Database.Data
 {
@@ -8,8 +9,8 @@ namespace Wyvern.Database.Data
     public class User
     {
         [Key]
-        [Column("id")]
-        public Guid Id { get; set; } = Guid.NewGuid();
+        [Column("id", TypeName = "char(26)")]
+        public string Id { get; set; } = IdGen.GenerateId();
 
         [Required]
         [MaxLength(32)]
@@ -33,12 +34,6 @@ namespace Wyvern.Database.Data
 
         [Column("birthday")]
         public DateTime Birthday { get; set; }
-
-        [Column("token_h")]
-        public string TokenHash { get; set; } = null!;
-
-        [Column("token_e")]
-        public string TokenEncrypted { get; set; } = null!;
 
         [Column("avatar")]
         public string? Avatar { get; set; }
