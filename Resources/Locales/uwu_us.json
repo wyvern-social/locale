@@ -1,5 +1,14 @@
 {
   "CopyrightFooter": "© {{year}} Wyvewn Sociaw. Aww wights wesewved >w<",
+  "Langs": {
+    "en_us": "Engwish >w<",
+    "en_pt": "Piwwate Tawk~",
+    "en_p": "Angwysh OwO",
+    "en_ws": "Shakespwean Spweech~",
+    "uwu_us": "UwUSpeak",
+    "lol_us": "Wowcat!! nya~",
+    "no": "Nowwegian UwU"
+  },
   "Emails": {
     "Welcome": {
       "Subject": "Wewcome tuu Wyvewn, {{username}}! uwu",

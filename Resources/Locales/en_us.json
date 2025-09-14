@@ -1,5 +1,14 @@
 {
   "CopyrightFooter": "© {{year}} Wyvern Social. All rights reserved.",
+  "Langs": {
+    "en_us": "English",
+    "en_pt": "Pirate Talk",
+    "en_p": "Anglish",
+    "en_ws": "Shakespearean English",
+    "uwu_us": "UwUSpeak",
+    "lol_us": "LOLCAT",
+    "no": "Norwegian"
+  },
   "Emails": {
     "Welcome": {
       "Subject": "Welcome to Wyvern, {{username}}!",

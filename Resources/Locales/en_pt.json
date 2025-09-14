@@ -1,0 +1,68 @@
+{
+  "CopyrightFooter": "© {{year}} Wyvern Social. All rights be claimed by th’ crew!",
+  "Langs": {
+    "en_us": "King’s English",
+    "en_pt": "Seadog’s Tongue",
+    "en_p": "Olde Englisc",
+    "en_ws": "Bard’s Speech",
+    "uwu_us": "Cutesy Babblin’",
+    "lol_us": "Kitty Jargon",
+    "no": "Nordish Talk"
+  },
+  "Emails": {
+    "Welcome": {
+      "Subject": "Ahoy, {{username}}! Welcome aboard Wyvern!",
+      "Title": "Welcome aboard, {{username}}!",
+      "Body": "We be mighty glad ye joined th’ Wyvern crew. Let’s get yer berth ready!",
+      "ActionPrompt": "To begin yer voyage, verify yer account, matey:",
+      "VerifyButton": "Verify Yer Account",
+      "LinkExpiry": "This here verification link be good fer 30 minutes.",
+      "Support": "Need a hand? Send a message in a bottle to <a href='mailto:support@wyvern.gg' style='color:#e54666; text-decoration:underline;'>support@wyvern.gg</a> or visit th’ official Wyvern port.",
+      "SignOff": "Fair winds n’ rum! <br> — Th’ Wyvern Crew"
+    }
+  },
+  "API": {
+    "Validators": {
+      "Username": {
+        "Taken": "Arrr, that name be claimed by another sailor.",
+        "Empty": "A name ye must choose, ye can’t sail nameless!",
+        "TooShort": "Yer name must be at least 2 letters long, lad.",
+        "TooLong": "Yer name can’t be longer than 15 letters, ye scallywag.",
+        "InvalidCharacters": "Yer name may only hold letters, numbers, dots, or underlines, aye.",
+        "RepeatedSymbols": "Ye can’t be stringin’ dots or underlines one after t’other.",
+        "ContainsWyvern": "Yer name can’t hold th’ word ‘wyvern’. That be forbidden!",
+        "BlockedPhrase": "Yer name holds a cursed phrase. Change it, or walk the plank!"
+      },
+      "Password": {
+        "Empty": "Ye can’t set sail without a secret word.",
+        "TooShort": "Yer secret word must be at least 8 characters, matey.",
+        "TooLong": "Yer secret word can’t be longer than 64 characters.",
+        "MissingUpper": "Yer secret word must hold at least one capital letter, arrr!",
+        "MissingLower": "Yer secret word must hold a wee lowercase letter.",
+        "MissingDigit": "Yer secret word must contain a number, savvy?",
+        "MissingSpecial": "Yer secret word must hold a special mark, ye landlubber."
+      },
+      "Email": {
+        "Taken": "That email be already spoken for. Try another, sailor.",
+        "Empty": "An email ye must give, ye can’t leave it empty.",
+        "TooLong": "Yer email can’t be longer than 320 letters.",
+        "InvalidFormat": "That email don’t look right, mate.",
+        "InvalidSymbol": "Yer email must hold a single ‘@’, no more, no less.",
+        "UnresolvableDomain": "The domain '{domain}' seems cursed n’ uncharted. Try another, or call fer help."
+      },
+      "Age": {
+        "InvalidBirthday": "Yer birthday can’t be set in th’ future seas.",
+        "TooYoung": "Ye must be 13 summers old or more to sail with Wyvern.",
+        "Suspicious": "Be ye truly {age} years old? If aye, contact th’ crew — we’ll buy ye a cake n’ rum!"
+      }
+    },
+    "Auth": {
+      "Register": {
+        "VerifyEmailRequired": "Almost thar! Check yer chest (inbox) n’ verify yer email to finish joinin’ the crew.",
+        "UsernameReserved": "This name be reserved by th’ captain.",
+        "InvalidInvite": "The invite code ye entered be false treasure.",
+        "InviteOnly": "New sailors board by invite only. Provide a valid code to join, or be gone!"
+      }
+    }
+  }
+}
