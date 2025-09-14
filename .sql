@@ -1,9 +1,9 @@
 CREATE TABLE users (
     id CHAR(26) PRIMARY KEY,
-    username VARCHAR(32) NOT NULL,
+    username VARCHAR(32) UNIQUE NOT NULL,
     discriminator CHAR(4) NOT NULL DEFAULT 0000,
     display_name VARCHAR(64),
-    email VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
     password TEXT NOT NULL,
     birthday DATE NOT NULL,
 

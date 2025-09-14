@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Wyvern.Database.Repositories;
 using Wyvern.Utils.Generators;
 using Wyvern.Mailer;
+using Wyvern.Utils.Cryptography;
 
 namespace Wyvern.API.Controllers
 {
@@ -51,6 +52,17 @@ namespace Wyvern.API.Controllers
                 return BadRequest(new { success = false, statusCode = 400, data = new { message = msg } });
             }
 
+            bool usernameTaken = await _db.Users.AnyAsync(u => u.Username == model.Username);
+            if (usernameTaken)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    statusCode = 400,
+                    data = new { message = _localeService.GetString("API.Auth.Register.UsernameTaken", model.Locale) }
+                });
+            }
+
             var emailResult = await EmailValidator.CheckAsync(model.Email);
             if (!emailResult.Success)
             {
@@ -58,6 +70,17 @@ namespace Wyvern.API.Controllers
                 if (emailResult.Data != null && emailResult.Data.TryGetValue("domain", out var domain))
                     msg = msg.Replace("{domain}", domain?.ToString() ?? "");
                 return BadRequest(new { success = false, statusCode = 400, data = new { message = msg } });
+            }
+
+            bool emailTaken = await _db.Users.AnyAsync(u => u.Email == model.Email);
+            if (emailTaken)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    statusCode = 400,
+                    data = new { message = _localeService.GetString("API.Auth.Register.EmailTaken", model.Locale) }
+                });
             }
 
             var passResult = await PasswordValidator.CheckAsync(model.Password);
@@ -93,6 +116,21 @@ namespace Wyvern.API.Controllers
                 return StatusCode(403, new { success = false, statusCode = 403, data = new { message = _localeService.GetString("API.Auth.Register.UsernameReserved", model.Locale) } });
 
             string userId = IdGen.GenerateId();
+            string hashedPassword = GenerateHash.HashGenerator(model.Password);
+
+            var user = new User
+            {
+                Id = userId,
+                Username = model.Username.ToLowerInvariant(),
+                Email = model.Email,
+                Password = hashedPassword,
+                Birthday = model.Birthday,
+                Locale = model.Locale!,
+                Region = country,
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
+            };
+
             string verify_token = TokenGen.GenerateToken(30);
             string verify_link = $"https://app.wyvern.gg/verify-email?token={verify_token}";
 
@@ -106,6 +144,11 @@ namespace Wyvern.API.Controllers
                 ExpiresAt = DateTime.UtcNow.AddMinutes(30),
                 Used = false
             };
+
+            _db.Users.Add(user);
+            _db.Tokens.Add(token);
+
+            await _db.SaveChangesAsync();
 
             await _mailer.SendEmailAsync(
                 EmailType.Welcome,
