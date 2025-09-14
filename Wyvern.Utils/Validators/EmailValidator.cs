@@ -17,24 +17,21 @@ namespace Wyvern.Utils.Validators
             if (string.IsNullOrWhiteSpace(email))
             {
                 return ValidationResult.Fail(
-                    "email.empty",
-                    "Email cannot be empty."
+                    "API.Validators.Email.Empty"
                 );
             }
 
             if (email.Length > 320)
             {
                 return ValidationResult.Fail(
-                    "email.too_long",
-                    "Email must be at most 320 characters."
+                    "API.Validators.Email.TooLong"
                 );
             }
 
             if (!EmailRegex.IsMatch(email))
             {
                 return ValidationResult.Fail(
-                    "email.invalid_format",
-                    "Email format is invalid."
+                    "API.Validators.Email.InvalidFormat"
                 );
             }
 
@@ -42,8 +39,7 @@ namespace Wyvern.Utils.Validators
             if (parts.Length != 2)
             {
                 return ValidationResult.Fail(
-                    "email.invalid_symbol",
-                    "Email must contain a single '@' symbol."
+                    "API.Validators.Email.InvalidSymbol"
                 );
             }
 
@@ -56,8 +52,8 @@ namespace Wyvern.Utils.Validators
             catch
             {
                 return ValidationResult.Fail(
-                    "email.unresolvable_domain",
-                    $"Domain '{domain}' could not be resolved."
+                    "API.Validators.Email.UnresolvableDomain",
+                    "domain", domain
                 );
             }
 

@@ -16,12 +16,17 @@ namespace Wyvern.API.Controllers
     public class RegisterController : ControllerBase
     {
         private readonly AppDbContext _db;
-        private readonly IWaitlistRepository _WaitlistRepository;
+        private readonly IWaitlistRepository _waitlistRepository;
+        private readonly LocaleService _localeService;
 
-        public RegisterController(AppDbContext db, IWaitlistRepository WaitlistRepository)
+        public RegisterController(
+            AppDbContext db,
+            IWaitlistRepository waitlistRepository,
+            LocaleService localeService)
         {
             _db = db;
-            _WaitlistRepository = WaitlistRepository;
+            _waitlistRepository = waitlistRepository;
+            _localeService = localeService;
         }
 
         [HttpPost]
@@ -32,126 +37,59 @@ namespace Wyvern.API.Controllers
             var usernameResult = await UsernameValidator.CheckAsync(model.Username);
             if (!usernameResult.Success)
             {
-                return BadRequest(new
-                {
-                    success = false,
-                    statusCode = 400,
-                    data = new
-                    {
-                        message_key = usernameResult.MessageKey,
-                        message = usernameResult.Message
-                    }
-                });
+                var msg = _localeService.GetString(usernameResult.MessageKey!, model.Locale);
+                return BadRequest(new { success = false, statusCode = 400, data = new { message = msg } });
             }
 
             var emailResult = await EmailValidator.CheckAsync(model.Email);
             if (!emailResult.Success)
             {
-                return BadRequest(new
-                {
-                    success = false,
-                    statusCode = 400,
-                    data = new
-                    {
-                        message_key = emailResult.MessageKey,
-                        message = emailResult.Message
-                    }
-                });
+                var msg = _localeService.GetString(emailResult.MessageKey!, model.Locale);
+                if (emailResult.Data != null && emailResult.Data.TryGetValue("domain", out var domain))
+                    msg = msg.Replace("{domain}", domain?.ToString() ?? "");
+                return BadRequest(new { success = false, statusCode = 400, data = new { message = msg } });
             }
 
             var passResult = await PasswordValidator.CheckAsync(model.Password);
             if (!passResult.Success)
             {
-                return BadRequest(new
-                {
-                    success = false,
-                    statusCode = 400,
-                    data = new
-                    {
-                        message_key = passResult.MessageKey,
-                        message = passResult.Message
-                    }
-                });
+                var msg = _localeService.GetString(passResult.MessageKey!, model.Locale);
+                return BadRequest(new { success = false, statusCode = 400, data = new { message = msg } });
             }
 
             var ageResult = AgeValidator.Check(model.Birthday);
             if (!ageResult.Success)
             {
-                return BadRequest(new
-                {
-                    success = false,
-                    statusCode = 400,
-                    data = new
-                    {
-                        message_key = ageResult.MessageKey,
-                        message = ageResult.Message
-                    }
-                });
+                var msg = _localeService.GetString(ageResult.MessageKey!, model.Locale);
+                int age = DateTime.UtcNow.Year - model.Birthday.Year;
+                if (DateTime.UtcNow < model.Birthday.AddYears(age)) age--;
+                msg = msg.Replace("{age}", age.ToString());
+                return BadRequest(new { success = false, statusCode = 400, data = new { message = msg } });
             }
 
             bool isInviteOnly = Config.GetKey<bool>("api", "registration", "invite_only");
             if (isInviteOnly)
             {
                 if (string.IsNullOrWhiteSpace(model.InviteCode))
-                {
-                    return StatusCode(403, new
-                    {
-                        success = false,
-                        statusCode = 403,
-                        data = new
-                        {
-                            message_key = "auth.register.invite_only",
-                            message = "Registration is currently invite-only. Please provide a valid invite code to continue."
-                        }
-                    });
-                }
+                    return StatusCode(403, new { success = false, statusCode = 403, data = new { message = _localeService.GetString("API.Auth.Register.InviteOnly", model.Locale) } });
 
                 var validInvite = "AB12-CD34"; // Example
                 if (model.InviteCode != validInvite)
-                {
-                    return StatusCode(403, new
-                    {
-                        success = false,
-                        statusCode = 403,
-                        data = new
-                        {
-                            message_key = "auth.register.invalid_invite",
-                            message = "The provided invite code is invalid."
-                        }
-                    });
-                }
+                    return StatusCode(403, new { success = false, statusCode = 403, data = new { message = _localeService.GetString("API.Auth.Register.InvalidInvite", model.Locale) } });
             }
 
-            var waitlistEntry = await _WaitlistRepository.GetByUsernameAsync(model.Username);
-
+            var waitlistEntry = await _waitlistRepository.GetByUsernameAsync(model.Username);
             if (waitlistEntry != null && !string.Equals(waitlistEntry.Email, model.Email, StringComparison.OrdinalIgnoreCase))
-            {
-                return StatusCode(403, new
-                {
-                    success = false,
-                    statusCode = 403,
-                    data = new
-                    {
-                        message_key = "auth.register.username_reserved",
-                        message = "This username is reserved."
-                    }
-                });
-            }
+                return StatusCode(403, new { success = false, statusCode = 403, data = new { message = _localeService.GetString("API.Auth.Register.UsernameReserved", model.Locale) } });
 
             string user_id = IdGen.GenerateId();
-
             string verify_token = TokenGen.GenerateToken(30);
 
             return StatusCode(201, new
             {
                 success = true,
                 statusCode = 201,
-                data = new
-                {
-                    message_key = "auth.register.verify_email_required",
-                    message = "Almost there! Check your inbox and verify your email to finish signing up.",
-                    requires_verification = true
-                }
+                data = new { message = _localeService.GetString("API.Auth.Register.VerifyEmailRequired", model.Locale) }
             });
         }
     }

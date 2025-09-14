@@ -11,24 +11,21 @@ namespace Wyvern.Utils.Validators
             if (string.IsNullOrEmpty(password))
             {
                 return Task.FromResult(ValidationResult.Fail(
-                    "password.empty",
-                    "Password cannot be empty."
+                    "API.Validators.Password.Empty"
                 ));
             }
 
             if (password.Length < 8)
             {
                 return Task.FromResult(ValidationResult.Fail(
-                    "password.too_short",
-                    "Password must be at least 8 characters."
+                    "API.Validators.Password.TooShort"
                 ));
             }
 
             if (password.Length > 64)
             {
                 return Task.FromResult(ValidationResult.Fail(
-                    "password.too_long",
-                    "Password must be at most 64 characters."
+                    "API.Validators.Password.TooLong"
                 ));
             }
 
@@ -40,32 +37,28 @@ namespace Wyvern.Utils.Validators
             if (!hasUpper)
             {
                 return Task.FromResult(ValidationResult.Fail(
-                    "password.missing_upper",
-                    "Password must contain at least one uppercase letter."
+                    "API.Validators.Password.MissingUpper"
                 ));
             }
 
             if (!hasLower)
             {
                 return Task.FromResult(ValidationResult.Fail(
-                    "password.missing_lower",
-                    "Password must contain at least one lowercase letter."
+                    "API.Validators.Password.MissingLower"
                 ));
             }
 
             if (!hasDigit)
             {
                 return Task.FromResult(ValidationResult.Fail(
-                    "password.missing_digit",
-                    "Password must contain at least one number."
+                    "API.Validators.Password.MissingDigit"
                 ));
             }
 
             if (!hasSpecial)
             {
                 return Task.FromResult(ValidationResult.Fail(
-                    "password.missing_special",
-                    "Password must contain at least one special character."
+                    "API.Validators.Password.MissingSpecial"
                 ));
             }
 

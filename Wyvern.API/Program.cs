@@ -7,6 +7,8 @@ using Wyvern.Database.Data;
 using Wyvern.Database.Repositories;
 using Wyvern.Mailer;
 using Npgsql;
+using Wyvern.Utils;
+using Wyvern.API;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -49,6 +51,9 @@ builder.Services.AddSingleton(new EmailService(
     useSsl,
     useStartTls
 ));
+
+var resourcesPath = Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "Resources");
+builder.Services.AddSingleton<LocaleService>(new LocaleService(resourcesPath));
 
 var app = builder.Build();
 

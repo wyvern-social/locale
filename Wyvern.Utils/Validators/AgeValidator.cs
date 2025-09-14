@@ -18,24 +18,22 @@ namespace Wyvern.Utils.Validators
             if (age < 0)
             {
                 return ValidationResult.Fail(
-                    "age.invalid_birthday",
-                    "Birthday cannot be in the future."
+                    "API.Validators.Age.InvalidBirthday"
                 );
             }
 
             if (age < 13)
             {
                 return ValidationResult.Fail(
-                    "age.too_young",
-                    "You must be at least 13 years old to use this service."
+                    "API.Validators.Age.TooYoung"
                 );
             }
 
             if (age > 100)
             {
                 return ValidationResult.Fail(
-                    "age.suspicious",
-                    $"Are you really {age} years old? If so, please contact support — we’ll buy you a cake!"
+                    "API.Validators.Age.Suspicious",
+                    "age", age
                 );
             }
 

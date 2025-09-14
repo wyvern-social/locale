@@ -26,48 +26,42 @@ namespace Wyvern.Utils.Validators
             if (string.IsNullOrWhiteSpace(username))
             {
                 return ValidationResult.Fail(
-                    "username.empty",
-                    "Username cannot be empty."
+                    "API.Validators.Username.Empty"
                 );
             }
 
             if (username.Length < 2)
             {
                 return ValidationResult.Fail(
-                    "username.too_short",
-                    "Username must be at least 2 characters long."
+                    "API.Validators.Username.TooShort"
                 );
             }
 
             if (username.Length > 15)
             {
                 return ValidationResult.Fail(
-                    "username.too_long",
-                    "Username may not be longer than 15 characters."
+                    "API.Validators.Username.TooLong"
                 );
             }
 
             if (!Regex.IsMatch(username, @"^[a-zA-Z0-9._]+$"))
             {
                 return ValidationResult.Fail(
-                    "username.invalid_characters",
-                    "Username can only contain letters, numbers, dots, or underscores."
+                    "API.Validators.Username.InvalidCharacters"
                 );
             }
 
             if (Regex.IsMatch(username, @"[._]{2,}"))
             {
                 return ValidationResult.Fail(
-                    "username.repeated_symbols",
-                    "Username cannot contain consecutive dots or underscores."
+                    "API.Validators.Username.RepeatedSymbols"
                 );
             }
 
             if (username.IndexOf("wyvern", StringComparison.OrdinalIgnoreCase) >= 0)
             {
                 return ValidationResult.Fail(
-                    "username.contains_reserved_word",
-                    "Username cannot contain 'wyvern'."
+                    "API.Validators.Username.ContainsWyvern"
                 );
             }
 
@@ -80,8 +74,7 @@ namespace Wyvern.Utils.Validators
                 if (name.IndexOf(phrase, StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     return ValidationResult.Fail(
-                        "username.blocked_phrase",
-                        "Username contains a blocked phrase."
+                        "API.Validators.Username.BlockedPhrase"
                     );
                 }
             }
