@@ -11,13 +11,4 @@
     <PackageReference Include="MailKit" Version="4.7.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="..\Resources/Mailer/Templates\**\*"
-      Link="Resources/Templates/%(RecursiveDir)%(Filename)%(Extension)"
-      CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="..\Resources/Mailer/Locales\**\*"
-      Link="Resources/Locales/%(RecursiveDir)%(Filename)%(Extension)"
-      CopyToOutputDirectory="PreserveNewest" />
-  </ItemGroup>
-
 </Project>
