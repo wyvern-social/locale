@@ -33,6 +33,9 @@ namespace Wyvern.API.Controllers
         public async Task<IActionResult> Post([FromBody] RegisterRequest model)
         {
             model.Locale ??= "en_us";
+            string country = Request.Headers.TryGetValue("CF-IPCountry", out var cfCountry) && !string.IsNullOrWhiteSpace(cfCountry)
+                ? cfCountry.ToString()
+                : "US";
 
             var usernameResult = await UsernameValidator.CheckAsync(model.Username);
             if (!usernameResult.Success)
