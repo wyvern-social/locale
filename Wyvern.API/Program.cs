@@ -81,7 +81,7 @@ if (!isProduction)
             Username = "admin", // <--- Not actually possible if you register an account via the API, by the way. - Luni
             DisplayName = "Administrator",
             Email = "admin@wyvern.gg",
-            Password = "NotFunctional",
+            Password = GenerateHash.HashGenerator("MyW0rdIsPassed!"),
             Birthday = DateTime.SpecifyKind(new DateTime(2000, 1, 1), DateTimeKind.Utc),
             Locale = "en_us",
             Region = "US",
@@ -118,12 +118,5 @@ if (!isProduction)
     );
 }*/
 //------------------------------------
-
-// -------- check password hash generation and validation is working properly --------
-/*string pass = "password";
-string hash = GenerateHash.HashGenerator(pass);
-CheckHash.HashChecker(pass, hash);
-CheckHash.HashChecker("random shit", hash);*/
-//------------------------------------------------------------------------------------
 
 app.Run();
