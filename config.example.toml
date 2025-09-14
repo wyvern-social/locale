@@ -24,3 +24,14 @@ pooling = true
 
 [api.registration]
 invite_only = false
+
+[utils]
+
+[utils.cryptography]
+
+[utils.cryptography.argon2]
+time_cost = 10
+memory_cost = 32768
+lanes = 5
+salt_length = 8
+hash_length = 20
