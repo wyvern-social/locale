@@ -8,9 +8,18 @@ namespace Wyvern.Mailer;
 
 public static class TemplateManager
 {
-    private static readonly string LocalesRoot = Path.Combine(AppContext.BaseDirectory, "Resources", "Locales");
-    private static readonly string TemplatesRoot = Path.Combine(AppContext.BaseDirectory, "Resources", "Templates");
+    private static readonly string ResourcesDir = Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "Resources");
+    private static readonly string LocalesRoot = Path.Combine(ResourcesDir, "Locales");
+    private static readonly string TemplatesRoot = Path.Combine(ResourcesDir, "MailTemplates");
     private static readonly Dictionary<string, JsonElement> Locales = LoadLocales();
+
+    static TemplateManager()
+    {
+        Handlebars.RegisterHelper("year", (writer, context, parameters) =>
+        {
+            writer.Write(DateTime.UtcNow.Year.ToString());
+        });
+    }
 
     private static Dictionary<string, JsonElement> LoadLocales()
     {
