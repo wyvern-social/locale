@@ -27,7 +27,7 @@ CREATE TABLE waitlist (
     email VARCHAR(255)
 );
 
-CREATE TABLE session (
+CREATE TABLE sessions (
     id CHAR(26) PRIMARY KEY,
     user_id CHAR(26) NOT NULL REFERENCES users(id) ON DELETE CASCADE,
 
