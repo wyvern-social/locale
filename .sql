@@ -22,6 +22,16 @@ CREATE TABLE users (
     updated_at TIMESTAMPTZ DEFAULT now()
 );
 
+CREATE TABLE tokens (
+    id CHAR(26) PRIMARY KEY,
+    user_id CHAR(26) NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    token TEXT NOT NULL,
+    type VARCHAR(32) NOT NULL DEFAULT 'email',
+    created_at TIMESTAMPTZ DEFAULT now(),
+    expires_at TIMESTAMPTZ NOT NULL,
+    used BOOLEAN DEFAULT FALSE
+);
+
 CREATE TABLE waitlist (
     username VARCHAR(32) PRIMARY KEY,
     email VARCHAR(255)
