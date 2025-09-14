@@ -37,6 +37,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IWaitlistRepository, WaitlistRepository>();
+builder.Services.AddScoped<ITokenRepository, TokenRepository>();
 
 var mailHost = Config.GetKey<string>("mailserver", "host");
 var mailPort = Config.GetKey<int>("mailserver", "port");
