@@ -1,5 +1,14 @@
 {
   "CopyrightFooter": "© {{year}} Wyvern Social. Alle rettigheter reservert.",
+  "Langs": {
+    "en_us": "Engelsk",
+    "en_pt": "Piratprat",
+    "en_p": "Englisc",
+    "en_ws": "Shakespearsk Engelsk",
+    "uwu_us": "Engwesk uwu",
+    "lol_us": "KATTSPRÅK",
+    "no": "Norsk"
+  },
   "Emails": {
     "Welcome": {
       "Subject": "Velkommen til Wyvern, {{username}}!",
