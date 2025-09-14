@@ -1,0 +1,24 @@
+{
+  "CopyrightFooter": "© {{year}} Wyvern Social. Alle rettigheter reservert.",
+  "Langs": {
+    "en_us": "Engelsk",
+    "en_pt": "Piratprat",
+    "en_p": "Englisc",
+    "en_ws": "Shakespearsk Engelsk",
+    "uwu_us": "Engwesk uwu",
+    "lol_us": "KATTSPRÅK",
+    "no": "Norsk"
+  },
+  "Emails": {
+    "Welcome": {
+      "Subject": "Velkommen til Wyvern, {{username}}!",
+      "Title": "Velkommen, {{username}}!",
+      "Body": "Vi er begeistret over å ha deg med i Wyvern-familien. La oss få deg i gang!",
+      "ActionPrompt": "For å begynne å utforske, vennligst bekreft kontoen din:",
+      "VerifyButton": "Bekreft konto",
+      "LinkExpiry": "Denne bekreftelseslenken er gyldig i 30 minutter.",
+      "Support": "Trenger du hjelp? Kontakt oss gjerne via <a href='mailto:support@wyvern.gg' style='color:#e54666; text-decoration:underline;'>support@wyvern.gg</a> eller sjekk det offisielle Wyvern-fellesskapet.",
+      "SignOff": "Med vennlig hilsen! <br> — Wyvern-teamet"
+    }
+  }
+}

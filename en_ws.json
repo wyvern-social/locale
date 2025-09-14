@@ -1,0 +1,68 @@
+{
+  "CopyrightFooter": "© {{year}} Wyvern Social. All rights reserved unto its keepers.",
+  "Langs": {
+    "en_us": "Englishe",
+    "en_pt": "The Mariner’s Tongue",
+    "en_p": "Englisc",
+    "en_ws": "Shakespearean Englishe",
+    "uwu_us": "Thee UwU Speech",
+    "lol_us": "LoLCatte",
+    "no": "Norsk Tongue"
+  },
+  "Emails": {
+    "Welcome": {
+      "Subject": "Hark! Welcome unto Wyvern, {{username}}!",
+      "Title": "Welcome, good {{username}}!",
+      "Body": "We are most joyous that thou hast joined the house of Wyvern. Let us prepare thee straightway!",
+      "ActionPrompt": "To embark upon thy quest, prithee verify thine account:",
+      "VerifyButton": "Verify Thy Account",
+      "LinkExpiry": "This token of verification shall endure but thirty minutes.",
+      "Support": "Dost thou require aid? Reach us at <a href='mailto:support@wyvern.gg' style='color:#e54666; text-decoration:underline;'>support@wyvern.gg</a>, or seek fellowship in Wyvern’s noble company.",
+      "SignOff": "With cheer and goodwill, <br> — The Fellowship of Wyvern"
+    }
+  },
+  "API": {
+    "Validators": {
+      "Username": {
+        "Taken": "Alas, that name is already claimed.",
+        "Empty": "A name thou must provide; it cannot be void.",
+        "TooShort": "Thy chosen name must be no shorter than two characters.",
+        "TooLong": "Thy chosen name may be no longer than fifteen characters.",
+        "InvalidCharacters": "Thy name may hold but letters, numbers, dots, or underscores.",
+        "RepeatedSymbols": "Consecutive dots or underscores may not dwell within thy name.",
+        "ContainsWyvern": "The word ‘wyvern’ may not be borne within thy name.",
+        "BlockedPhrase": "Thy name concealeth a forbidden phrase."
+      },
+      "Password": {
+        "Empty": "Thy secret word may not be naught.",
+        "TooShort": "Thy secret word must be eight characters at the least.",
+        "TooLong": "Thy secret word must not exceed fourscore and four characters.",
+        "MissingUpper": "Thy secret word must contain at least one capital letter.",
+        "MissingLower": "Thy secret word must contain at least one humble letter.",
+        "MissingDigit": "Thy secret word must contain at least one numeral.",
+        "MissingSpecial": "Thy secret word must contain at least one special character."
+      },
+      "Email": {
+        "Taken": "That letter of correspondence is already in use. Choose thee another.",
+        "Empty": "Thou must provide an email; it cannot be void.",
+        "TooLong": "Thy email may not exceed three hundred and twenty characters.",
+        "InvalidFormat": "The form of thy email is improper.",
+        "InvalidSymbol": "Thy email must contain but a single ‘@’.",
+        "UnresolvableDomain": "The domain '{domain}' appeareth false. Try another, or summon support shouldst thou be certain."
+      },
+      "Age": {
+        "InvalidBirthday": "Thy day of birth cannot lie in time’s unwritten morrow.",
+        "TooYoung": "Thou must have seen at least thirteen summers to partake of this service.",
+        "Suspicious": "Art thou truly {age} years of age? If so, seek support — and we shall buy thee cake!"
+      }
+    },
+    "Auth": {
+      "Register": {
+        "VerifyEmailRequired": "Thou art near the end! Look within thy inbox and verify thy email to finish thy joining.",
+        "UsernameReserved": "This name is reserved by decree.",
+        "InvalidInvite": "The token of invitation thou gavest is false.",
+        "InviteOnly": "Enrollment is by invitation only. Present a true code, or wait upon fortune’s grace."
+      }
+    }
+  }
+}
