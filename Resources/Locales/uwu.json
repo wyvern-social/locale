@@ -42,7 +42,7 @@
       "Age": {
         "InvalidBirthday": "B-Biwwfday cannot be in the f-future, uwu >w<",
         "TooYoung": "You must be at weast 13 yeaws owd to use this sewvice, nya~ >w<",
-        "Suspicious": "A-Awe you weawwy this owd, nya~? If so, pwease contact suppowt — we’ww buy you a c-cake, uwu~ >w<"
+        "Suspicious": "A-Awe you weawwy {{age}} yeaws owd, nya~? If so, pwease contact suppowt — we’ww buy you a c-cake, uwu~!"
       }
     },
     "Auth": {
