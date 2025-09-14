@@ -9,6 +9,7 @@ using Wyvern.Mailer;
 using Npgsql;
 using Wyvern.Utils;
 using Wyvern.API;
+using Wyvern.Utils.Generators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -66,6 +67,40 @@ if (!isProduction)
     Console.ForegroundColor = ConsoleColor.Yellow;
     Console.WriteLine("The application is running in a non-production environment. This is normal in a developer environment and can be safely ignored.");
     app.UseDeveloperExceptionPage();
+
+    using var scope = app.Services.CreateScope();
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+    var existingAdmin = await db.Users.FirstOrDefaultAsync(u => u.Username == "admin");
+    if (existingAdmin == null)
+    {
+        var adminUser = new User
+        {
+            Id = IdGen.GenerateId(),
+            Username = "admin", // <--- Not actually possible if you register an account via the API, by the way. - Luni
+            DisplayName = "Administrator",
+            Email = "admin@wyvern.gg",
+            Password = "NotFunctional",
+            Birthday = DateTime.SpecifyKind(new DateTime(2000, 1, 1), DateTimeKind.Utc),
+            Locale = "en_us",
+            Region = "US",
+            Rank = 1,
+            IsStaff = true,
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow
+        };
+
+        db.Users.Add(adminUser);
+        await db.SaveChangesAsync();
+
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Admin user created: admin@wyvern.gg / MyW0rdIsPassed!");
+        Console.ResetColor();
+    }
+    else
+    {
+        Console.WriteLine("Dev admin already exists.");
+    }
 }
 
 // -------- send a test email --------
