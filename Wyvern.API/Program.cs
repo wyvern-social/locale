@@ -10,6 +10,7 @@ using Npgsql;
 using Wyvern.Utils;
 using Wyvern.API;
 using Wyvern.Utils.Generators;
+using Wyvern.Utils.Cryptography;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -117,5 +118,7 @@ if (!isProduction)
     );
 }*/
 //------------------------------------
+
+GenerateHash.HashGenerator("password");
 
 app.Run();

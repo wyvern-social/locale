@@ -10,5 +10,8 @@
     <PackageReference Include="Isopoh.Cryptography.Argon2" Version="2.0.0" />
     <PackageReference Include="Isopoh.Cryptography.SecureArray" Version="2.0.0" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wyvern.ConfigModel\Wyvern.ConfigModel.csproj" />
+  </ItemGroup>
 
 </Project>
