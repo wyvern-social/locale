@@ -119,6 +119,11 @@ if (!isProduction)
 }*/
 //------------------------------------
 
-GenerateHash.HashGenerator("password");
+// -------- check password hash generation and validation is working properly --------
+/*string pass = "password";
+string hash = GenerateHash.HashGenerator(pass);
+CheckHash.HashChecker(pass, hash);
+CheckHash.HashChecker("random shit", hash);*/
+//------------------------------------------------------------------------------------
 
 app.Run();

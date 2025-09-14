@@ -10,7 +10,6 @@ namespace Wyvern.Utils.Cryptography
     {
         public static string HashGenerator(string input)
         {
-            Console.WriteLine("\n");
             Argon2Config config = AlgorithmSettings.GetConfig();
             config.Password = Encoding.ASCII.GetBytes(input);
             var argon2A = new Argon2(config);
@@ -19,11 +18,8 @@ namespace Wyvern.Utils.Cryptography
             {
                 hashString = config.EncodeString(hashA.Buffer);
             }
-
             Console.WriteLine("[GenerateHash.cs] Plaintext:\t\t{0}", input);
             Console.WriteLine("[GenerateHash.cs] Ciphertext:\t\t{0}", hashString);
-            Console.WriteLine("\n");
-
             return hashString;
         }
     }
