@@ -8,6 +8,7 @@ namespace Wyvern.Database.Data
             : base(options) { }
 
         public DbSet<User> Users { get; set; } = null!;
+        public DbSet<Token> Tokens { get; set; }
         public DbSet<Waitlist> Waitlist { get; set; }
     }
 }
