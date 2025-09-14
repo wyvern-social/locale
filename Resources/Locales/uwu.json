@@ -1,5 +1,5 @@
 {
-  "CopyrightFooter": "© {{year}} Wyvern Sociaw. Aww wights wesewved uwu.",
+  "CopyrightFooter": "© {{year}} Wyvern Sociaw. Aww wights wesewved uwu~",
   "Welcome": {
     "Subject": "Wewcome to Wyvern, {{username}}~! UwU",
     "Title": "Wewcome, {{username}}~! OwO",
@@ -9,5 +9,42 @@
     "LinkExpiry": "This vewification wink is vawid fow 30 minutes, nya~!",
     "Support": "Need hewp? Contact us at <a href='mailto:support@wyvern.gg' style='color:#e54666; text-decoration:underline;'>support@wyvern.gg</a> ow check the officiaw Wyvern community, uwu~!",
     "SignOff": "Cheewsies! <br> — The Wyvern Team UwU"
+  },
+  "API": {
+    "Validators": {
+      "Username": {
+        "Empty": "U-Username cannot be empty, uwu >w<",
+        "TooShort": "Username must be at weast 2 chawactews wong, nya~",
+        "TooLong": "U-Username may nyot be wonger than 15 chawactews >w<",
+        "InvalidCharacters": "Username can onwy contain wettews, numbews, dots, ow undewscores, uwu",
+        "RepeatedSymbols": "Username cannot contain consec-utive dots ow undewscores, nya~!",
+        "ContainsReservedWord": "U-Username cannot contain 'wyvern', uwu >w<",
+        "BlockedPhrase": "U-Username contains a bwocked pwase, b-baka~"
+      },
+      "Password": {
+        "Empty": "P-Passwowd cannot be empty, uwu",
+        "TooShort": "Passwowd must be at weast 8 chawactews, nya~ >_<",
+        "TooLong": "Passwowd must be at most 64 chawactews, uwu",
+        "MissingUpper": "Passwowd must contain at weast one uppa cwase wettew, b-baka~",
+        "MissingLower": "Passwowd must contain at weast one wowew cwase wettew, uwu >w<",
+        "MissingDigit": "Passwowd must contain at weast one nyumbew, nya~",
+        "MissingSpecial": "Passwowd must contain at weast one speciaw chawactew, uwu~!"
+      },
+      "Email": {
+        "Empty": "E-Email cannot be empty, uwu",
+        "TooLong": "Email must be at most 320 chawactews, nya~ >_<",
+        "InvalidFormat": "Email f-fowmat is invawid, uwu",
+        "InvalidSymbol": "Email must contain a singwe '@' symbow, nya~",
+        "UnresolvableDomain": "Email domain couwd not be wesowved, uwu >w<"
+      }
+    },
+    "Auth": {
+      "Register": {
+        "VerifyEmailRequired": "Awmowst thewe! Check youw inbox and vewify youw email to finish signing up, uwu~",
+        "UsernameReserved": "This u-username is wesewved, nya~ >w<",
+        "InvalidInvite": "The pwovided invite code is invawid, uwu",
+        "InviteOnly": "Wegistwation is cuwwentwy invite-onwy~ Pwease pwovide a vawid invite code, uwu~"
+      }
+    }
   }
 }
