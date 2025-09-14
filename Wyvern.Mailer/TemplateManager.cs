@@ -100,5 +100,5 @@ public static class TemplateManager
     public static IEnumerable<string> GetAvailableLocales() => Locales.Keys;
 
     public static string GetTemplateName(EmailType type) => type.ToString().ToLowerInvariant() + ".hbs";
-    public static string GetSubjectKey(EmailType type) => type.ToString() + ".Subject";
+    public static string GetSubjectKey(EmailType type) => "Emails." + type.ToString() + ".Subject";
 }

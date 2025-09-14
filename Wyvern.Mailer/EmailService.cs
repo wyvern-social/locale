@@ -54,6 +54,6 @@ public class EmailService
         var bodyHtml = TemplateManager.RenderTemplate(templateName, data, locale);
         var subject = TemplateManager.GetLocaleString(subjectKey, data, locale);
 
-        await SendEmailAsync("Wyvern", _username, toName, toEmail, subject, bodyHtml);
+        await SendEmailAsync("Wyvern Social", _username, toName, toEmail, subject, bodyHtml);
     }
 }
