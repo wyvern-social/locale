@@ -1,0 +1,170 @@
+{
+  "CopyrightFooter": {
+    "Default": "© {{year}} Wyvern Social. All rights reserved.",
+    "Lolcat": "© {{year}} Wyvern Sociaw. Aww wights wesewved uwu~"
+  },
+  "Emails": {
+    "Welcome": {
+      "Subject": {
+        "Default": "Welcome to Wyvern, {{username}}!",
+        "Lolcat": "Wewcome tuu Wyvern, {{username}}! owo"
+      },
+      "Title": {
+        "Default": "Welcome, {{username}}!",
+        "Lolcat": "Haii, {{username}}! uwu"
+      },
+      "Body": {
+        "Default": "We're thrilled to have you join the Wyvern family. Let's get you set up!",
+        "Lolcat": "We iz sooo happi u join da Wyvern famiwy!! ^w^ wetz gets u setted up!!"
+      },
+      "ActionPrompt": {
+        "Default": "To start exploring, please verify your account:",
+        "Lolcat": "Tu stawt expwowing, pwease confurm ur acc: >w<"
+      },
+      "VerifyButton": {
+        "Default": "Verify Account",
+        "Lolcat": "Confurm Acc owo"
+      },
+      "LinkExpiry": {
+        "Default": "This verification link is valid for 30 minutes.",
+        "Lolcat": "Dis confurmashun wink works onwy 30 minnyutz, nya~"
+      },
+      "Support": {
+        "Default": "Need help? Contact us at <a href='mailto:support@wyvern.gg' style='color:#e54666; text-decoration:underline;'>support@wyvern.gg</a> or check the official Wyvern community.",
+        "Lolcat": "Nid halp?? >.< Pwease ping us at <a href='mailto:support@wyvern.gg' style='color:#e54666; text-decoration:underline;'>support@wyvern.gg</a> or chekk da offishul Wyvern comyoonity :3"
+      },
+      "SignOff": {
+        "Default": "Cheers! <br> — The Wyvern Team",
+        "Lolcat": "Cheewz n snugglez! <br> — da Wyvern hoomanz uwu"
+      }
+    }
+  },
+  "API": {
+    "Validators": {
+      "Username": {
+        "Taken": {
+          "Default": "Sorry, that username is taken.",
+          "Lolcat": "Sowwy, dat usahname ish alweady nommed up >:3"
+        },
+        "Empty": {
+          "Default": "Username cannot be empty.",
+          "Lolcat": "Usahname cant be empteh nya~"
+        },
+        "TooShort": {
+          "Default": "Username must be at least 2 characters long.",
+          "Lolcat": "Usahname must be biggah than 2 lettyz uwu"
+        },
+        "TooLong": {
+          "Default": "Username may not be longer than 15 characters.",
+          "Lolcat": "Usahname cant haz moar than 15 lettyz owo"
+        },
+        "InvalidCharacters": {
+          "Default": "Username can only contain letters, numbers, dots, or underscores.",
+          "Lolcat": "Usahname can haz only lettyz, numbahz, dotz, or unda-scoops :3"
+        },
+        "RepeatedSymbols": {
+          "Default": "Username cannot contain consecutive dots or underscores.",
+          "Lolcat": "Usahname cant haz spammy dotz or unda-scoops >w<"
+        },
+        "ContainsWyvern": {
+          "Default": "Username cannot contain 'wyvern'.",
+          "Lolcat": "Usahname cant haz 'wyvern' in it, sowwy nya~"
+        },
+        "BlockedPhrase": {
+          "Default": "Username contains a blocked phrase.",
+          "Lolcat": "Usahname haz nawty wurdz, bad kitty! >:c"
+        }
+      },
+      "Password": {
+        "Empty": {
+          "Default": "Password cannot be empty.",
+          "Lolcat": "Pawsswurd cant be empti owo"
+        },
+        "TooShort": {
+          "Default": "Password must be at least 8 characters.",
+          "Lolcat": "Pawsswurd haz tu be 8+ lettyz nyaw~"
+        },
+        "TooLong": {
+          "Default": "Password must be at most 64 characters.",
+          "Lolcat": "Pawsswurd cant haz moar dan 64 lettyz :3"
+        },
+        "MissingUpper": {
+          "Default": "Password must contain at least one uppercase letter.",
+          "Lolcat": "Pawsswurd needs one big scawie letty >:3"
+        },
+        "MissingLower": {
+          "Default": "Password must contain at least one lowercase letter.",
+          "Lolcat": "Pawsswurd needs one smol letty uwu"
+        },
+        "MissingDigit": {
+          "Default": "Password must contain at least one number.",
+          "Lolcat": "Pawsswurd must haz 1 numbah, gib numbah pwease ^-^"
+        },
+        "MissingSpecial": {
+          "Default": "Password must contain at least one special character.",
+          "Lolcat": "Pawsswurd needs speshul symbow ✧ nya~"
+        }
+      },
+      "Email": {
+        "Taken": {
+          "Default": "This email is already in use. Please try another.",
+          "Lolcat": "Dis emaiw iz awready nommed up. twy anothah uwu"
+        },
+        "Empty": {
+          "Default": "Email cannot be empty.",
+          "Lolcat": "Emaiw cant be empti :c"
+        },
+        "TooLong": {
+          "Default": "Email must be at most 320 characters.",
+          "Lolcat": "Emaiw too chonky!! max 320 lettyz >.<"
+        },
+        "InvalidFormat": {
+          "Default": "Email format is invalid.",
+          "Lolcat": "Emaiw formattin iz all wonky owo"
+        },
+        "InvalidSymbol": {
+          "Default": "Email must contain a single '@' symbol.",
+          "Lolcat": "Emaiw needs one '@' thingy uwu"
+        },
+        "UnresolvableDomain": {
+          "Default": "The email domain '{domain}' appears invalid. Try a different email or contact support if this is correct.",
+          "Lolcat": "Da emaiw domain '{domain}' iz sus. twy diffewent emaiw or ask supowt nya~"
+        }
+      },
+      "Age": {
+        "InvalidBirthday": {
+          "Default": "Birthday cannot be in the future.",
+          "Lolcat": "Birfday cant be futuwe day!! :O"
+        },
+        "TooYoung": {
+          "Default": "You must be at least 13 years old to use this service.",
+          "Lolcat": "U must be 13+ to pway hewe >w<"
+        },
+        "Suspicious": {
+          "Default": "Are you really {age} years old? If so, please contact support — we’ll buy you a cake!",
+          "Lolcat": "U sez u iz {age}?? wowie!! if twue, ping supowt n we gib u cake uwu"
+        }
+      }
+    },
+    "Auth": {
+      "Register": {
+        "VerifyEmailRequired": {
+          "Default": "Almost there! Check your inbox and verify your email to finish signing up.",
+          "Lolcat": "Awmost dere! Chekk ur inbox n confurm emaiw tu finis signy-up owo"
+        },
+        "UsernameReserved": {
+          "Default": "This username is reserved.",
+          "Lolcat": "Dis usahname ish keepd awready, sowwy nya~"
+        },
+        "InvalidInvite": {
+          "Default": "The provided invite code is invalid.",
+          "Lolcat": "Dis invyte code ish wack, cant use it >.<"
+        },
+        "InviteOnly": {
+          "Default": "Registration is currently invite-only. Please provide a valid invite code to continue.",
+          "Lolcat": "Joinin iz invite-onwy nao! gib vawid invyte code tu join pwease :3"
+        }
+      }
+    }
+  }
+}
