@@ -8,6 +8,7 @@ using Wyvern.Database.Data;
 using Microsoft.EntityFrameworkCore;
 using Wyvern.Database.Repositories;
 using Wyvern.Utils.Generators;
+using Wyvern.Mailer;
 
 namespace Wyvern.API.Controllers
 {
@@ -18,15 +19,21 @@ namespace Wyvern.API.Controllers
         private readonly AppDbContext _db;
         private readonly IWaitlistRepository _waitlistRepository;
         private readonly LocaleService _localeService;
+        private readonly ITokenRepository _tokenRepository;
+        private readonly EmailService _mailer;
 
         public RegisterController(
             AppDbContext db,
             IWaitlistRepository waitlistRepository,
-            LocaleService localeService)
+            LocaleService localeService,
+            ITokenRepository tokenRepository,
+            EmailService mailer)
         {
             _db = db;
             _waitlistRepository = waitlistRepository;
             _localeService = localeService;
+            _tokenRepository = tokenRepository;
+            _mailer = mailer;
         }
 
         [HttpPost]
@@ -85,8 +92,28 @@ namespace Wyvern.API.Controllers
             if (waitlistEntry != null && !string.Equals(waitlistEntry.Email, model.Email, StringComparison.OrdinalIgnoreCase))
                 return StatusCode(403, new { success = false, statusCode = 403, data = new { message = _localeService.GetString("API.Auth.Register.UsernameReserved", model.Locale) } });
 
-            string user_id = IdGen.GenerateId();
+            string userId = IdGen.GenerateId();
             string verify_token = TokenGen.GenerateToken(30);
+            string verify_link = $"https://app.wyvern.gg/verify-email?token={verify_token}";
+
+            Console.WriteLine(verify_link);
+
+            var token = new Token
+            {
+                UserId = userId,
+                TokenValue = verify_token,
+                Type = "email_verification",
+                ExpiresAt = DateTime.UtcNow.AddMinutes(30),
+                Used = false
+            };
+
+            await _mailer.SendEmailAsync(
+                EmailType.Welcome,
+                model.Locale,
+                model.Username,
+                model.Email,
+                new { Username = model.Username, Link = verify_link }
+            );
 
             return StatusCode(201, new
             {
