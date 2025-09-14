@@ -2,55 +2,55 @@
   "CopyrightFooter": "© {{year}} Wyvern Sociaw. Aww wights wesewved uwu~",
   "Emails": {
     "Welcome": {
-      "Subject": "Wewcome to Wyvern, {{username}}~! UwU",
-      "Title": "Wewcome, {{username}}~! OwO",
-      "Body": "We'we weawwy thwiwwed to have you join the Wyvern famiwy! Wet's get you set up, nya~!",
-      "ActionPrompt": "To stawt expwowing, pwease vewify youw account, uwu:",
-      "VerifyButton": "Vewify Account~",
-      "LinkExpiry": "This vewification wink is vawid fow 30 minutes, nya~!",
-      "Support": "Need hewp? Contact us at <a href='mailto:support@wyvern.gg' style='color:#e54666; text-decoration:underline;'>support@wyvern.gg</a> ow check the officiaw Wyvern community, uwu~!",
-      "SignOff": "Cheewsies! <br> — The Wyvern Team UwU"
+      "Subject": "Wewcome to Wyvern, {{username}}! owo",
+      "Title": "Hewwo, {{username}}! uwu",
+      "Body": "We'we supew thwiwwed to have you join the Wyvern famiwy! ^w^ Wet's get you set up~",
+      "ActionPrompt": "To stawt expwowing, pwease vewify youw account:",
+      "VerifyButton": "Vewify Account >w<",
+      "LinkExpiry": "This vewification wink is vawid fow 30 minutes owo",
+      "Support": "Need hewp? Contact us at <a href='mailto:support@wyvern.gg' style='cowow:#e54666; text-decowation:undewwine;'>support@wyvern.gg</a> ow check the officiwaw Wyvern community!",
+      "SignOff": "Cheews! <br> — The Wyvern Team uwu"
     }
   },
   "API": {
     "Validators": {
       "Username": {
-        "Empty": "U-Username cannot be empty, uwu >w<",
-        "TooShort": "Username must be at weast 2 chawactews wong, nya~",
-        "TooLong": "U-Username may nyot be wonger than 15 chawactews >w<",
-        "InvalidCharacters": "Username can onwy contain wettews, numbews, dots, ow undewscores, uwu",
-        "RepeatedSymbols": "Username cannot contain consec-utive dots ow undewscores, nya~!",
-        "ContainsReservedWord": "U-Username cannot contain 'wyvern', uwu >w<",
-        "BlockedPhrase": "U-Username contains a bwocked pwase, b-baka~"
+        "Empty": "Uwu? Youw usewname can't be empty >.<",
+        "TooShort": "Usewname must be at weast 2 chawactews wong uwu",
+        "TooLong": "Usewname may nyot be wonger than 15 chawactews owo",
+        "InvalidCharacters": "Usewname can onwy contain wetters, nyumbews, dots, ow undewscores >w<",
+        "RepeatedSymbols": "Usewname cannot contain consecutive dots ow undewscores uwu",
+        "ContainsWyvern": "Usewname cannot contain 'wyvern' >w<",
+        "BlockedPhrase": "Usewname contains a bwocked pwase owo"
       },
       "Password": {
-        "Empty": "P-Passwowd cannot be empty, uwu",
-        "TooShort": "Passwowd must be at weast 8 chawactews, nya~ >_<",
-        "TooLong": "Passwowd must be at most 64 chawactews, uwu",
-        "MissingUpper": "Passwowd must contain at weast one uppa cwase wettew, b-baka~",
-        "MissingLower": "Passwowd must contain at weast one wowew cwase wettew, uwu >w<",
-        "MissingDigit": "Passwowd must contain at weast one nyumbew, nya~",
-        "MissingSpecial": "Passwowd must contain at weast one speciaw chawactew, uwu~!"
+        "Empty": "Pwassword can't be empty >w<",
+        "TooShort": "Pwassword must be at weast 8 chawactews uwu",
+        "TooLong": "Pwassword must be at most 64 chawactews owo",
+        "MissingUpper": "Pwassword must contain at weast one uppewcase wetter uwu",
+        "MissingLower": "Pwassword must contain at weast one wowewcase wetter >w<",
+        "MissingDigit": "Pwassword must contain at weast one nyumbew uwu",
+        "MissingSpecial": "Pwassword must contain at weast one speciaw chawactew >w<"
       },
       "Email": {
-        "Empty": "E-Email cannot be empty, uwu",
-        "TooLong": "Email must be at most 320 chawactews, nya~ >_<",
-        "InvalidFormat": "Email f-fowmat is invawid, uwu",
-        "InvalidSymbol": "Email must contain a singwe '@' symbow, nya~",
-        "UnresolvableDomain": "Email domain couwd not be wesowved, uwu >w<"
+        "Empty": "Email can't be empty uwu",
+        "TooLong": "Email must be at most 320 chawactews owo",
+        "InvalidFormat": "Email fowmat is invawid >w<",
+        "InvalidSymbol": "Email must contain a singwe '@' symbow uwu",
+        "UnresolvableDomain": "The email domain '{domain}' appeaws invawid owo. Twy a diffewent email ow contact suppowt if this is cowwect >w<"
       },
       "Age": {
-        "InvalidBirthday": "B-Biwwfday cannot be in the f-future, uwu >w<",
-        "TooYoung": "You must be at weast 13 yeaws owd to use this sewvice, nya~ >w<",
-        "Suspicious": "A-Awe you weawwy {{age}} yeaws owd, nya~? If so, pwease contact suppowt — we’ww buy you a c-cake, uwu~!"
+        "InvalidBirthday": "UwU? Youw biwthday can't be in the futuwe >.<",
+        "TooYoung": "You must be at weast 13 yeaws owd to use dis sewvice uwu",
+        "Suspicious": "Awe you weawwy {age} yeaws owd? OwO If so, pwease contact suppowt — we’ww buy you a cake! ^w^"
       }
     },
     "Auth": {
       "Register": {
-        "VerifyEmailRequired": "Awmowst thewe! Check youw inbox and vewify youw email to finish signing up, uwu~",
-        "UsernameReserved": "This u-username is wesewved, nya~ >w<",
-        "InvalidInvite": "The pwovided invite code is invawid, uwu",
-        "InviteOnly": "Wegistwation is cuwwentwy invite-onwy~ Pwease pwovide a vawid invite code, uwu~"
+        "VerifyEmailRequired": "Awmowst thewe! Check youw inbox and vewify youw email to finish signing up uwu",
+        "UsernameReserved": "This usewname is wesewved >w<",
+        "InvalidInvite": "The pwovided invite code is invawid owo",
+        "InviteOnly": "We awe cuwwentwy invite-onwy uwu. Pwease pwovide a vawid invite code to continue >w<"
       }
     }
   }

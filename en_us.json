@@ -20,7 +20,7 @@
         "TooLong": "Username may not be longer than 15 characters.",
         "InvalidCharacters": "Username can only contain letters, numbers, dots, or underscores.",
         "RepeatedSymbols": "Username cannot contain consecutive dots or underscores.",
-        "ContainsReservedWord": "Username cannot contain 'wyvern'.",
+        "ContainsWyvern": "Username cannot contain 'wyvern'.",
         "BlockedPhrase": "Username contains a blocked phrase."
       },
       "Password": {
@@ -37,12 +37,12 @@
         "TooLong": "Email must be at most 320 characters.",
         "InvalidFormat": "Email format is invalid.",
         "InvalidSymbol": "Email must contain a single '@' symbol.",
-        "UnresolvableDomain": "Email domain could not be resolved."
+        "UnresolvableDomain": "The email domain '{domain}' appears invalid. Try a different email or contact support if this is correct."
       },
       "Age": {
         "InvalidBirthday": "Birthday cannot be in the future.",
         "TooYoung": "You must be at least 13 years old to use this service.",
-        "Suspicious": "Are you really {{age}} years old? If so, please contact support — we’ll buy you a cake!"
+        "Suspicious": "Are you really {age} years old? If so, please contact support — we’ll buy you a cake!"
       }
     },
     "Auth": {
