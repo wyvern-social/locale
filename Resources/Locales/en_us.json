@@ -15,6 +15,7 @@
   "API": {
     "Validators": {
       "Username": {
+        "Taken": "Sorry, that username is taken.",
         "Empty": "Username cannot be empty.",
         "TooShort": "Username must be at least 2 characters long.",
         "TooLong": "Username may not be longer than 15 characters.",
@@ -33,6 +34,7 @@
         "MissingSpecial": "Password must contain at least one special character."
       },
       "Email": {
+        "Taken": "This email is already in use. Please try another.",
         "Empty": "Email cannot be empty.",
         "TooLong": "Email must be at most 320 characters.",
         "InvalidFormat": "Email format is invalid.",

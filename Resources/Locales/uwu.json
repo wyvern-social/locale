@@ -15,6 +15,7 @@
   "API": {
     "Validators": {
       "Username": {
+        "Taken": "S-sowwy >.< that usewname is awweady taken uwu",
         "Empty": "Uwu? Youw usewname can't be empty >.<",
         "TooShort": "Usewname must be at weast 2 chawactews wong uwu",
         "TooLong": "Usewname may nyot be wonger than 15 chawactews owo",
@@ -33,6 +34,7 @@
         "MissingSpecial": "Pwassword must contain at weast one speciaw chawactew >w<"
       },
       "Email": {
+        "Taken": "OwO this email is awweady in use >w< twy anothew one pwease~",
         "Empty": "Email can't be empty uwu",
         "TooLong": "Email must be at most 320 chawactews owo",
         "InvalidFormat": "Email fowmat is invawid >w<",

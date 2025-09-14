@@ -59,7 +59,7 @@ namespace Wyvern.API.Controllers
                 {
                     success = false,
                     statusCode = 400,
-                    data = new { message = _localeService.GetString("API.Auth.Register.UsernameTaken", model.Locale) }
+                    data = new { message = _localeService.GetString("API.Validators.Username.Taken", model.Locale) }
                 });
             }
 
@@ -79,7 +79,7 @@ namespace Wyvern.API.Controllers
                 {
                     success = false,
                     statusCode = 400,
-                    data = new { message = _localeService.GetString("API.Auth.Register.EmailTaken", model.Locale) }
+                    data = new { message = _localeService.GetString("API.Validators.Email.Taken", model.Locale) }
                 });
             }
 
