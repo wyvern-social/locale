@@ -18,7 +18,7 @@ namespace Wyvern.Utils.Cryptography
             {
                 hashString = config.EncodeString(hashA.Buffer);
             }
-            Console.WriteLine("[GenerateHash.cs] Plaintext:\t\t{0}", input);
+            Console.WriteLine("[GenerateHash.cs] Plaintext:\t\t<REDACTED>");
             Console.WriteLine("[GenerateHash.cs] Ciphertext:\t\t{0}", hashString);
             return hashString;
         }
