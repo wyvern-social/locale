@@ -38,6 +38,11 @@
         "InvalidFormat": "Email format is invalid.",
         "InvalidSymbol": "Email must contain a single '@' symbol.",
         "UnresolvableDomain": "Email domain could not be resolved."
+      },
+      "Age": {
+        "InvalidBirthday": "Birthday cannot be in the future.",
+        "TooYoung": "You must be at least 13 years old to use this service.",
+        "Suspicious": "Are you really this old? If so, please contact support — we’ll buy you a cake!"
       }
     },
     "Auth": {
