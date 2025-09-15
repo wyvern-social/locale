@@ -48,7 +48,7 @@
         "TooLong": "Email must be at most 320 characters.",
         "InvalidFormat": "Email format is invalid.",
         "InvalidSymbol": "Email must contain a single '@' symbol.",
-        "UnresolvableDomain": "The email domain '{domain}' appears invalid. Try a different email or contact support if this is correct."
+        "UnresolvableDomain": "The email domain '{domain}' appears invalid. Try a different email or contact support if this is incorrect."
       },
       "Age": {
         "InvalidBirthday": "Birthday cannot be in the future.",

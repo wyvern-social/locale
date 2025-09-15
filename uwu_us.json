@@ -48,7 +48,7 @@
         "TooLong": "Emaiw cant be wonger dan 320 wettiez~",
         "InvalidFormat": "Emaiw fwomat ish not vawid >.<",
         "InvalidSymbol": "Emaiw must haz one '@' symbow uwu",
-        "UnresolvableDomain": "Da emaiw domain '{domain}' wooks invawid, pwease twy diffewent emaiw ow ping suppowt if dis ish cowwect~"
+        "UnresolvableDomain": "Da emaiw domain '{domain}' wooks invawid, pwease twy diffewent emaiw ow ping suppowt if dis ish incowwect~"
       },
       "Age": {
         "InvalidBirthday": "Birfday cant be in da futuwe, sowwy nya~",
