@@ -1,0 +1,68 @@
+{
+  "CopyrightFooter": "© {{year}} Wyvewn Sociaw. Aww wights wesewved >w<",
+  "Langs": {
+    "en_us": "Engwish >w<",
+    "en_pt": "Piwwate Tawk~",
+    "en_p": "Angwysh OwO",
+    "en_ws": "Shakespwean Spweech~",
+    "uwu_us": "UwUSpeak",
+    "lol_us": "Wowcat!! nya~",
+    "no": "Nowwegian UwU"
+  },
+  "Emails": {
+    "Welcome": {
+      "Subject": "Wewcome tuu Wyvewn, {{username}}! uwu",
+      "Title": "Haii, {{username}}! ^w^",
+      "Body": "We'we supew excited tuu haz u join da Wyvewn famiwy~ wet’s gets u aww comfy comfy! owo",
+      "ActionPrompt": "Tu stawt expwowing, pwease vewify youw accy-pouncy: >w<",
+      "VerifyButton": "Vewify Accy~",
+      "LinkExpiry": "Dis winky ish onwy vawid fow 30 minnyutes, nya~",
+      "Support": "Nyeed hewpies? Contwact us at <a href='mailto:support@wyvern.gg' style='color:#e54666; text-decoration:underline;'>suppowt@wyvewn.gg</a> or join da offishuw Wyvewn community! uwu",
+      "SignOff": "Cheewz n snuggwy hugz! <br> — Da Wyvewn Team >///<"
+    }
+  },
+  "API": {
+    "Validators": {
+      "Username": {
+        "Taken": "Sowwy, dat usewname ish awweady taken >w<",
+        "Empty": "Usewname cant be emptie, nya~",
+        "TooShort": "Usewname must be at weast 2 chawactews wong~",
+        "TooLong": "Usewname cant be wonger dan 15 chawactews >.<",
+        "InvalidCharacters": "Usewname can onwy haz wettiez, numbewz, dotz, ow undewscoawz uwu",
+        "RepeatedSymbols": "Usewname cant haz too many dotz ow undewscoawz in a wow~",
+        "ContainsWyvern": "Usewname cant haz 'wyvewn' in it, sowwy nya~",
+        "BlockedPhrase": "Usewname haz nawty wowdz, bad kitty! >///<"
+      },
+      "Password": {
+        "Empty": "Passwuwd cant be emptie uwu",
+        "TooShort": "Passwuwd must be at weast 8 wettiez >w<",
+        "TooLong": "Passwuwd cant be wonger dan 64 wettiez~",
+        "MissingUpper": "Passwuwd must haz at weast one big wetta~",
+        "MissingLower": "Passwuwd must haz at weast one smow wetta uwu",
+        "MissingDigit": "Passwuwd must haz a numbew nya~",
+        "MissingSpecial": "Passwuwd must haz a speshuw chawactew ✧"
+      },
+      "Email": {
+        "Taken": "Dis emaiw ish awweady in use, nya~ twy anotha one >w<",
+        "Empty": "Emaiw cant be emptie uwu",
+        "TooLong": "Emaiw cant be wonger dan 320 wettiez~",
+        "InvalidFormat": "Emaiw fwomat ish not vawid >.<",
+        "InvalidSymbol": "Emaiw must haz one '@' symbow uwu",
+        "UnresolvableDomain": "Da emaiw domain '{domain}' wooks invawid, pwease twy diffewent emaiw ow ping suppowt if dis ish incowwect~"
+      },
+      "Age": {
+        "InvalidBirthday": "Birfday cant be in da futuwe, sowwy nya~",
+        "TooYoung": "U must be at weast 13 yeaws owd tuu use dis sewvice uwu",
+        "Suspicious": "Awe u weawwy {age} yeaws owd?? if so, pwease contwact suppowt — we'ww buy u a cakie~ >w<"
+      }
+    },
+    "Auth": {
+      "Register": {
+        "VerifyEmailRequired": "Awmost dewe! Checc youw inbox n vewify youw emaiw tuu finish signy-up uwu",
+        "UsernameReserved": "Dis usewname ish wesewved nya~",
+        "InvalidInvite": "Dis invite code ish invawid >w<",
+        "InviteOnly": "Wegistwation ish invite-onwy wight nao~ pwease gib vawid invite code tuu continue uwu"
+      }
+    }
+  }
+}
