@@ -1,0 +1,68 @@
+{
+  "CopyrightFooter": "© {{year}} Wyvern Social. Alle rettigheter reservert.",
+  "Langs": {
+    "en_us": "Engelsk",
+    "en_pt": "Piratprat",
+    "en_p": "Englisc",
+    "en_ws": "Shakespearsk Engelsk",
+    "uwu_us": "Engewsk uwu",
+    "lol_us": "KATTESPRÅK",
+    "no": "Norsk"
+  },
+  "Emails": {
+    "Welcome": {
+      "Subject": "Velkommen til Wyvern, {{username}}!",
+      "Title": "Velkommen, {{username}}!",
+      "Body": "Vi er begeistret over å ha deg med i Wyvern-familien. La oss få deg i gang!",
+      "ActionPrompt": "For å begynne å utforske, vennligst bekreft kontoen din:",
+      "VerifyButton": "Bekreft konto",
+      "LinkExpiry": "Denne bekreftelseslenken er gyldig i 30 minutter.",
+      "Support": "Trenger du hjelp? Kontakt oss gjerne via <a href='mailto:support@wyvern.gg' style='color:#e54666; text-decoration:underline;'>support@wyvern.gg</a> eller sjekk det offisielle Wyvern-fellesskapet.",
+      "SignOff": "Med vennlig hilsen! <br> — Wyvern-teamet"
+    }
+  },
+  "API": {
+    "Validators": {
+      "Username": {
+        "Taken": "Beklager, dette brukernavnet er allerede tatt.",
+        "Empty": "Brukernavnfeltet kan ikke være tomt.",
+        "TooShort": "Brukernavnet må ha minst 2 tegn.",
+        "TooLong": "Brukernavnet kan ikke være lengre enn 15 tegn.",
+        "InvalidCharacters": "Brukernavnet kan bare inneholde bokstaver, tall, punktum, eller understreker.",
+        "RepeatedSymbols": "Brukernavnet kan ikke inneholde gjentatte punktum eller understreker.",
+        "ContainsWyvern": "Brukernavnet kan ikke inneholde 'wyvern'.",
+        "BlockedPhrase": "Brukernavnet inneholder ett blokkert uttrykk."
+      },
+      "Password": {
+        "Empty": "Passordfeltet kan ikke være tomt.",
+        "TooShort": "Passord må inneholde minst 8 tegn.",
+        "TooLong": "Passord kan ikke være lengre enn 64 tegn.",
+        "MissingUpper": "Passord må inneholde minst én stor bokstav.",
+        "MissingLower": "Passord må inneholde minst én liten bokstav.",
+        "MissingDigit": "Passord må inneholde minst ett tall.",
+        "MissingSpecial": "Passord må inneholde minst ett spesialtegn."
+      },
+      "Email": {
+        "Taken": "Denne e-posten er allerede i bruk. Vennligst prøv noe annet.",
+        "Empty": "E-postfeltet kan ikke være tomt.",
+        "TooLong": "E-post kan ikke være lengre enn 320 tegn.",
+        "InvalidFormat": "E-post-format er ugyldig.",
+        "InvalidSymbol": "E-post må inneholde én alfakrøll (@).",
+        "UnresolvableDomain": "Dette e-postdomenet '{domain}' ser ut til å være ugyldig. Prøv en annen e-postadresse eller ta kontakt med kundestøtte hvis dette er feil."
+      },
+      "Age": {
+        "InvalidBirthday": "Bursdagen din kan ikke være i framtiden.",
+        "TooYoung": "Du må være minst 13 år for å kunne bruke denne tjenesten.",
+        "Suspicious": "Er du virkelig {age} år gammel? I så fall, vennligst ta kontakt med kundestøtte — vi spanderer en kake på deg!"
+      }
+    },
+    "Auth": {
+      "Register": {
+        "VerifyEmailRequired": "Nesten fremme! Sjekk innboksen din og bekreft e-posten din for å fullføre registreringen.",
+        "UsernameReserved": "Dette brukernavnet er reservert.",
+        "InvalidInvite": "Den oppgitte invitasjonskoden er ugyldig.",
+        "InviteOnly": "Registrering er for øyeblikket kun mulig ved invitasjon. Oppgi en gyldig invitasjonskode for å fortsette."
+      }
+    }
+  }
+}

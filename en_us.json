@@ -1,0 +1,80 @@
+{
+  "CopyrightFooter": "© {{year}} Wyvern Social. All rights reserved.",
+  "Langs": {
+    "en_us": "English",
+    "en_pt": "Pirate Talk",
+    "en_p": "Anglish",
+    "en_ws": "Shakespearean English",
+    "uwu_us": "UwUSpeak",
+    "lol_us": "LOLCAT",
+    "no": "Norwegian"
+  },
+  "Emails": {
+    "Welcome": {
+      "Subject": "Welcome to Wyvern, {{username}}!",
+      "Title": "Welcome, {{username}}!",
+      "Body": "We're thrilled to have you join the Wyvern family. Let's get you set up!",
+      "ActionPrompt": "To start exploring, please verify your account:",
+      "VerifyButton": "Verify Account",
+      "LinkExpiry": "This verification link is valid for 30 minutes.",
+      "Support": "Need help? Contact us at <a href='mailto:support@wyvern.gg' style='color:#e54666; text-decoration:underline;'>support@wyvern.gg</a> or check the official Wyvern community.",
+      "SignOff": "Cheers! <br> — The Wyvern Team"
+    },
+    "NewLogin": {
+      "Subject": "New Login Detected",
+      "Title": "Hello {{username}}!",
+      "Body": "We've detected a new login on your account from the following:",
+      "IpAddress": "{{ip}}",
+      "Location": "{{location.city}}, {{location.regionName}}, {{location.country}}",
+      "ActionPrompt": "If this wasn't you, you can reset your password here:",
+      "ResetButton": "Reset Password"
+    }
+  },
+  "API": {
+    "Validators": {
+      "Username": {
+        "Taken": "Sorry, that username is taken.",
+        "Empty": "Username cannot be empty.",
+        "TooShort": "Username must be at least 2 characters long.",
+        "TooLong": "Username may not be longer than 15 characters.",
+        "InvalidCharacters": "Username can only contain letters, numbers, dots, or underscores.",
+        "RepeatedSymbols": "Username cannot contain consecutive dots or underscores.",
+        "ContainsWyvern": "Username cannot contain 'wyvern'.",
+        "BlockedPhrase": "Username contains a blocked phrase."
+      },
+      "Password": {
+        "Empty": "Password cannot be empty.",
+        "TooShort": "Password must be at least 8 characters.",
+        "TooLong": "Password must be at most 64 characters.",
+        "MissingUpper": "Password must contain at least one uppercase letter.",
+        "MissingLower": "Password must contain at least one lowercase letter.",
+        "MissingDigit": "Password must contain at least one number.",
+        "MissingSpecial": "Password must contain at least one special character."
+      },
+      "Email": {
+        "Taken": "This email is already in use. Please try another.",
+        "Empty": "Email cannot be empty.",
+        "TooLong": "Email must be at most 320 characters.",
+        "InvalidFormat": "Email format is invalid.",
+        "InvalidSymbol": "Email must contain a single '@' symbol.",
+        "UnresolvableDomain": "The email domain '{domain}' appears invalid. Try a different email or contact support if this is incorrect."
+      },
+      "Age": {
+        "InvalidBirthday": "Birthday cannot be in the future.",
+        "TooYoung": "You must be at least 13 years old to use this service.",
+        "Suspicious": "Are you really {age} years old? If so, please contact support — we’ll buy you a cake!"
+      }
+    },
+    "Auth": {
+      "Register": {
+        "VerifyEmailRequired": "Almost there! Check your inbox and verify your email to finish signing up.",
+        "UsernameReserved": "This username is reserved.",
+        "InvalidInvite": "The provided invite code is invalid.",
+        "InviteOnly": "Registration is currently invite-only. Please provide a valid invite code to continue."
+      },
+      "Login": {
+        "Incorrect": "Invalid email or password."
+      }
+    }
+  }
+}

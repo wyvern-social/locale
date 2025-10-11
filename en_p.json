@@ -1,0 +1,68 @@
+{
+  "CopyrightFooter": "© {{year}} Wyvern Social. All rights kept.",
+  "Langs": {
+    "en_us": "English",
+    "en_pt": "Sea-speech",
+    "en_p": "Englisc",
+    "en_ws": "Shakespeare Speech",
+    "uwu_us": "Sweet-speak",
+    "lol_us": "Cat-gab",
+    "no": "Norsk"
+  },
+  "Emails": {
+    "Welcome": {
+      "Subject": "Hail to Wyvern, {{username}}!",
+      "Title": "Hail, {{username}}!",
+      "Body": "We’re glad to have thee join the Wyvern kin. Let’s get thee set up!",
+      "ActionPrompt": "To begin thy wandering, please prove thy self:",
+      "VerifyButton": "Prove Self",
+      "LinkExpiry": "This proving link lasts for 30 minutes.",
+      "Support": "Need help? Write us at <a href='mailto:support@wyvern.gg' style='color:#e54666; text-decoration:underline;'>support@wyvern.gg</a> or look to the rightful Wyvern fellowship.",
+      "SignOff": "With good will, <br> — The Wyvern Band"
+    }
+  },
+  "API": {
+    "Validators": {
+      "Username": {
+        "Taken": "Sorry, that name is already in use.",
+        "Empty": "Name cannot be empty.",
+        "TooShort": "Name must be at least 2 staves long.",
+        "TooLong": "Name may not be longer than 15 staves.",
+        "InvalidCharacters": "Name may only bear letters, numbers, dots, or underlines.",
+        "RepeatedSymbols": "Name cannot bear back-to-back dots or underlines.",
+        "ContainsWyvern": "Name cannot bear 'wyvern'.",
+        "BlockedPhrase": "Name bears a banned word."
+      },
+      "Password": {
+        "Empty": "Key-word cannot be empty.",
+        "TooShort": "Key-word must be at least 8 staves long.",
+        "TooLong": "Key-word may not be longer than 64 staves.",
+        "MissingUpper": "Key-word must bear at least one great stave.",
+        "MissingLower": "Key-word must bear at least one small stave.",
+        "MissingDigit": "Key-word must bear at least one number.",
+        "MissingSpecial": "Key-word must bear at least one special mark."
+      },
+      "Email": {
+        "Taken": "That e-letter is already in use. Please try another.",
+        "Empty": "E-letter cannot be empty.",
+        "TooLong": "E-letter may not be longer than 320 staves.",
+        "InvalidFormat": "E-letter shape is unright.",
+        "InvalidSymbol": "E-letter must bear one ‘@’ mark.",
+        "UnresolvableDomain": "The e-letter stead '{domain}' seems unright. Try another or reach out for help if thou art sure."
+      },
+      "Age": {
+        "InvalidBirthday": "Birth-day cannot be set in the time yet to come.",
+        "TooYoung": "Thou must be at least 13 winters old to use this craft.",
+        "Suspicious": "Art thou truly {age} winters old? If so, please reach out — we’ll buy thee a cake!"
+      }
+    },
+    "Auth": {
+      "Register": {
+        "VerifyEmailRequired": "Almost done! Look to thy inbox and prove thy e-letter to end the signup.",
+        "UsernameReserved": "That name is set aside and cannot be used.",
+        "InvalidInvite": "The given in-bid code is unright.",
+        "InviteOnly": "Signup is now by in-bid only. Please give a rightful in-bid code to go on."
+      }
+    }
+  }
+}

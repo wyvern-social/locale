@@ -1,0 +1,68 @@
+{
+  "CopyrightFooter": "© {{year}} Wyvern Sociaw. Aww wights wesewved uwu~",
+  "Langs": {
+    "en_us": "ENGRISH",
+    "en_pt": "PIRATEY TAWK",
+    "en_p": "OLDE ENGRISH",
+    "en_ws": "SHAEKSPURR ENGRISH",
+    "uwu_us": "UWU SPEEK",
+    "lol_us": "LOLCAT",
+    "no": "NORSCHE"
+  },
+  "Emails": {
+    "Welcome": {
+      "Subject": "Wewcome tu Wyvern, {{username}}! owo",
+      "Title": "Haii, {{username}}! uwu",
+      "Body": "We iz sooo happi u join da Wyvern famiwy!! ^w^ wetz gets u setted up!!",
+      "ActionPrompt": "Tu stawt expwowing, pwease confurm ur acc: >w<",
+      "VerifyButton": "Confurm Acc owo",
+      "LinkExpiry": "Dis confurmashun wink works onwy 30 minnyutz, nya~",
+      "Support": "Nid halp?? >.< Pwease ping us at <a href='mailto:support@wyvern.gg' style='color:#e54666; text-decoration:underline;'>support@wyvern.gg</a> or chekk da offishul Wyvern comyoonity :3",
+      "SignOff": "Cheewz n snugglez! <br> — da Wyvern hoomanz uwu"
+    }
+  },
+  "API": {
+    "Validators": {
+      "Username": {
+        "Taken": "Sowwy, dat usahname ish alweady nommed up >:3",
+        "Empty": "Usahname cant be empteh nya~",
+        "TooShort": "Usahname must be biggah than 2 lettyz uwu",
+        "TooLong": "Usahname cant haz moar than 15 lettyz owo",
+        "InvalidCharacters": "Usahname can haz only lettyz, numbahz, dotz, or unda-scoops :3",
+        "RepeatedSymbols": "Usahname cant haz spammy dotz or unda-scoops >w<",
+        "ContainsWyvern": "Usahname cant haz 'wyvern' in it, sowwy nya~",
+        "BlockedPhrase": "Usahname haz nawty wurdz, bad kitty! >:c"
+      },
+      "Password": {
+        "Empty": "Pawsswurd cant be empti owo",
+        "TooShort": "Pawsswurd haz tu be 8+ lettyz nyaw~",
+        "TooLong": "Pawsswurd cant haz moar dan 64 lettyz :3",
+        "MissingUpper": "Pawsswurd needs one big scawie letty >:3",
+        "MissingLower": "Pawsswurd needs one smol letty uwu",
+        "MissingDigit": "Pawsswurd must haz 1 numbah, gib numbah pwease ^-^",
+        "MissingSpecial": "Pawsswurd needs speshul symbow ✧ nya~"
+      },
+      "Email": {
+        "Taken": "Dis emaiw iz awready nommed up. twy anothah uwu",
+        "Empty": "Emaiw cant be empti :c",
+        "TooLong": "Emaiw too chonky!! max 320 lettyz >.<",
+        "InvalidFormat": "Emaiw formattin iz all wonky owo",
+        "InvalidSymbol": "Emaiw needs one '@' thingy uwu",
+        "UnresolvableDomain": "Da emaiw domain '{domain}' iz sus. twy diffewent emaiw or ask supowt nya~"
+      },
+      "Age": {
+        "InvalidBirthday": "Birfday cant be futuwe day!! :O",
+        "TooYoung": "U must be 13+ to pway hewe >w<",
+        "Suspicious": "U sez u iz {age}?? wowie!! if twue, ping supowt n we gib u cake uwu"
+      }
+    },
+    "Auth": {
+      "Register": {
+        "VerifyEmailRequired": "Awmost dere! Chekk ur inbox n confurm emaiw tu finis signy-up owo",
+        "UsernameReserved": "Dis usahname ish keepd awready, sowwy nya~",
+        "InvalidInvite": "Dis invyte code ish wack, cant use it >.<",
+        "InviteOnly": "Joinin iz invite-onwy nao! gib vawid invyte code tu join pwease :3"
+      }
+    }
+  }
+}
