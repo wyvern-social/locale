@@ -74,6 +74,10 @@
       },
       "Login": {
         "Incorrect": "Invalid email or password."
+      },
+      "DeleteAccount": {
+        "Incorrect": "Incorrect password.",
+        "Fail": "Unable to delete account."
       }
     }
   }
